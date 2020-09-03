@@ -73,42 +73,65 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<p><!-- badges: start --> <a href="https://travis-ci.com/Flavjack/inti"><img src="https://travis-ci.com/Flavjack/inti.svg?branch=master" alt="Travis build status"></a> <!-- badges: end --></p>
-<div id="inti" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#inti" class="anchor"></a>Inti</h1></div>
-<p>A collection of different applications and procedures used in plant breeding and experimental designs.</p>
-<div id="install" class="section level2">
+
+<p>Inti package is a collection of different applications and procedures used in plant breeding and experimental designs.</p>
+<div id="installation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#install" class="anchor"></a>Install</h2>
-<p><code>{r eval=F} install.packages("devtools") devtools::install_github("flavjack/inti")</code></p>
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>You can install the released version of inti from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"inti"</span>)</pre></div>
+<p>And the development version from <a href="https://github.com/Flavjack/inti">GitHub</a> with:</p>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="co"># install.packages("devtools")</span>
+<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu">install_github</span>(<span class="st">"Flavjack/inti"</span>)</pre></div>
 </div>
 <div id="shiny-apps" class="section level2">
 <h2 class="hasAnchor">
 <a href="#shiny-apps" class="anchor"></a>Shiny apps</h2>
+<!--html_preserve-->
+<div id="footer" style="width:100%; margin:auto;">
+<div style="display:inline-block; width:32%">
+<p style="text-align:center">
+</p>
+<p><a target="_blank" href="https://flavjack.shinyapps.io/tarpuy/"><img src="https://raw.githubusercontent.com/Flavjack/inti/master/inst/icons/favicon_tarpuy/android-chrome-512x512.png" style="height:80px" title="tarpuy"></a> <span style="display:block;"><small>Tarpuy</small></span></p>
+
+</div>
+<div style="display:inline-block; width:32%">
+<p style="text-align:center">
+</p>
+<p><a target="_blank" href="https://flavjack.shinyapps.io/rticles/"><img src="https://raw.githubusercontent.com/Flavjack/inti/master/inst/icons/favicon_rticles/android-chrome-512x512.png" style="height:80px" title="rticles"></a> <span style="display:block;"><small>Rticles</small></span></p>
+
+</div>
+<div style="display:inline-block; width:32%">
+<p style="text-align:center">
+</p>
+<p><a target="_blank" href="https://flavjack.shinyapps.io/yupanapro/"><img src="https://raw.githubusercontent.com/Flavjack/inti/master/inst/icons/favicon_yupana/android-chrome-512x512.png" style="height:80px" title="yupana"></a> <span style="display:block;"><small>Yupana</small></span></p>
+
+</div>
+</div>
+<!-- *** -->
+<div id="footer" style="width:100%; margin:auto;">
+<div style="display:inline-block; width:100%">
+<p style="text-align:center">
+</p>
+<p><a target="_blank" href="https://github.com/Flavjack/inti"><img src="https://image.flaticon.com/icons/svg/25/25231.svg" style="height:75px" title="Github" alt="Github"></a> <span style="display:block;"><small>Github</small></span></p>
+
+</div>
+</div>
+<!--/html_preserve-->
 <div id="yupana" class="section level3">
 <h3 class="hasAnchor">
 <a href="#yupana" class="anchor"></a>Yupana</h3>
-<p><code>{r eval=F} inti::yupana()</code></p>
+<div class="sourceCode" id="cb3"><pre class="r"><span class="kw pkg">inti</span><span class="kw ns">::</span><span class="fu"><a href="reference/yupana.html">yupana</a></span>()</pre></div>
 </div>
 <div id="tarpuy" class="section level3">
 <h3 class="hasAnchor">
 <a href="#tarpuy" class="anchor"></a>Tarpuy</h3>
-<p><code>{r eval=F} inti::tarpuy()</code></p>
+<div class="sourceCode" id="cb4"><pre class="r"><span class="kw pkg">inti</span><span class="kw ns">::</span><span class="fu"><a href="reference/tarpuy.html">tarpuy</a></span>()</pre></div>
 </div>
 <div id="rticles" class="section level3">
 <h3 class="hasAnchor">
 <a href="#rticles" class="anchor"></a>Rticles</h3>
-<p><code>{r eval=F} inti::rticles_addin()</code></p>
-</div>
-</div>
-<div id="more-info" class="section level2">
-<h2 class="hasAnchor">
-<a href="#more-info" class="anchor"></a>More Info:</h2>
-<p><a href="https://inkaverse.com/" class="uri">https://inkaverse.com/</a></p>
-<p><a href="https://lozanoisla.com/" class="uri">https://lozanoisla.com/</a></p>
-<!-- bash -->
-<!-- R CMD Rd2pdf . --no-clean -->
+<div class="sourceCode" id="cb5"><pre class="r"><span class="kw pkg">inti</span><span class="kw ns">::</span><span class="fu"><a href="reference/rticles_addin.html">rticles_addin</a></span>()</pre></div>
 </div>
 </div>
 
@@ -139,7 +162,13 @@
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://travis-ci.com/Flavjack/inti"><img src="https://travis-ci.com/Flavjack/inti.svg?branch=master" alt="Travis build status"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 
