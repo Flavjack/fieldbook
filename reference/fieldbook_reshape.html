@@ -8,12 +8,19 @@
 
 <title>Fieldbook reshape — fieldbook_reshape • inti</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
@@ -41,6 +48,7 @@
 
 <meta property="og:title" content="Fieldbook reshape — fieldbook_reshape" />
 <meta property="og:description" content="Function to reshape fieldbook according a separation character" />
+<meta property="og:image" content="https://flavjack.github.io/inti/reference/figures/logo.png" />
 
 
 
@@ -54,6 +62,16 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113308628-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113308628-1');
+</script>
 
 
   </head>
@@ -80,18 +98,38 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
+    
   </a>
 </li>
 <li>
-  <a href="../articles/inti.html">Get started</a>
+  <a href="../articles/inti.html">
+    <span class="fa fa-seedling"></span>
+     
+    Get started
+  </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../articles/heritability.html">
+    <span class="fa fa-book"></span>
+     
+    Articles
+  </a>
 </li>
 <li>
-  <a href="../news/index.html">Changelog</a>
+  <a href="../reference/index.html">
+    <span class="fa fa-file-code"></span>
+     
+    Functions
+  </a>
+</li>
+<li>
+  <a href="../news/index.html">
+    <span class="fa fa-file-alt"></span>
+     
+    News
+  </a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -124,13 +162,13 @@
     </div>
 
     <pre class="usage"><span class='fu'>fieldbook_reshape</span>(
-  <span class='no'>data</span>,
-  <span class='no'>last_factor</span>,
-  <span class='no'>sep</span>,
-  <span class='no'>new_colname</span>,
-  <span class='kw'>from_var</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>to_var</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>exc_factors</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+  <span class='kw'>data</span>,
+  <span class='kw'>last_factor</span>,
+  <span class='kw'>sep</span>,
+  <span class='kw'>new_colname</span>,
+  from_var = <span class='kw'>NULL</span>,
+  to_var = <span class='kw'>NULL</span>,
+  exc_factors = <span class='kw'>NULL</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -179,37 +217,37 @@ will help to create the column <code>rep</code> and the new variable name will b
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='co'># \donttest{</span>
 
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>inti</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>googlesheets4</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>tidyverse</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/flavjack/inti'>inti</a></span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span>)
 
-<span class='no'>url</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
+<span class='kw'>url</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
               , <span class='st'>"1gue-wSQcEu4nJigVZdUWsTfIIzhtxpDRdWAQiEHgKak/edit#gid=56106366"</span>)
 <span class='co'># browseURL(url)</span>
-<span class='no'>gs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span>(<span class='no'>url</span>)
+<span class='kw'>gs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span>(<span class='kw'>url</span>)
 
-(<span class='no'>data</span> <span class='kw'>&lt;-</span> <span class='no'>gs</span> <span class='kw'>%&gt;%</span>
+(<span class='kw'>data</span> <span class='op'>&lt;-</span> <span class='kw'>gs</span> <span class='op'>%&gt;%</span>
     <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"fb"</span>))
-
-<span class='no'>fbrs</span> <span class='kw'>&lt;-</span> <span class='fu'>fieldbook_reshape</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>data</span>
-                          , <span class='kw'>last_factor</span> <span class='kw'>=</span> <span class='st'>"imbt"</span>
-                          , <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>"_"</span>
-                          , <span class='kw'>new_colname</span> <span class='kw'>=</span> <span class='st'>"rep"</span>
-                          <span class='co'>#, from_var = "sch_0_1"</span>
-                          <span class='co'>#, to_var = "swc_0_1"</span>
-                          <span class='co'>#, exc_factors = "bar_code"</span>
+</div><div class='output co'>#&gt; <span class='error'>Error: Can't get Google credentials.</span>
+#&gt; <span class='error'>Are you running googlesheets4 in a non-interactive session? Consider:</span>
+#&gt; <span class='error'>  * `gs4_deauth()` to prevent the attempt to get credentials.</span>
+#&gt; <span class='error'>  * Call `gs4_auth()` directly with all necessary specifics.</span>
+#&gt; <span class='error'>See gargle's "Non-interactive auth" vignette for more details:</span>
+#&gt; <span class='error'>https://gargle.r-lib.org/articles/non-interactive-auth.html</span></div><div class='input'>
+<span class='kw'>fbrs</span> <span class='op'>&lt;-</span> <span class='fu'>fieldbook_reshape</span>(data = <span class='kw'>data</span>
+                          , last_factor = <span class='st'>"imbt"</span>
+                          , sep = <span class='st'>"_"</span>
+                          , new_colname = <span class='st'>"rep"</span>
+                          , from_var = <span class='st'>"sch_0_1"</span>
+                          , to_var = <span class='st'>"swc_0_1"</span>
+                          , exc_factors = <span class='st'>"bar_code"</span>
                           )
+</div><div class='output co'>#&gt; <span class='error'>Error in UseMethod("select_"): no applicable method for 'select_' applied to an object of class "function"</span></div><div class='input'><span class='kw'>fbrs</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'fbrs' not found</span></div><div class='input'>
+<span class='co'># }</span>
 
-<span class='no'>fbrs</span> <span class='kw'>&lt;-</span> <span class='fu'>fieldbook_reshape</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>data</span>
-                          , <span class='kw'>last_factor</span> <span class='kw'>=</span> <span class='st'>"geno"</span>
-                          , <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>"_"</span>
-                          , <span class='kw'>new_colname</span> <span class='kw'>=</span> <span class='st'>"smp"</span>
-                          , <span class='kw'>exc_factors</span> <span class='kw'>=</span> <span class='st'>"bar_code"</span>
-                          )
-
-}</div></pre>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -225,7 +263,7 @@ will help to create the column <code>rep</code> and the new variable name will b
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

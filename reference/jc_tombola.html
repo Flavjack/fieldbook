@@ -8,12 +8,19 @@
 
 <title>Journal Club Tombola — jc_tombola • inti</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
@@ -41,6 +48,7 @@
 
 <meta property="og:title" content="Journal Club Tombola — jc_tombola" />
 <meta property="og:description" content="Function for arrange journal club schedule" />
+<meta property="og:image" content="https://flavjack.github.io/inti/reference/figures/logo.png" />
 
 
 
@@ -54,6 +62,16 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113308628-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113308628-1');
+</script>
 
 
   </head>
@@ -80,18 +98,38 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
+    
   </a>
 </li>
 <li>
-  <a href="../articles/inti.html">Get started</a>
+  <a href="../articles/inti.html">
+    <span class="fa fa-seedling"></span>
+     
+    Get started
+  </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../articles/heritability.html">
+    <span class="fa fa-book"></span>
+     
+    Articles
+  </a>
 </li>
 <li>
-  <a href="../news/index.html">Changelog</a>
+  <a href="../reference/index.html">
+    <span class="fa fa-file-code"></span>
+     
+    Functions
+  </a>
+</li>
+<li>
+  <a href="../news/index.html">
+    <span class="fa fa-file-alt"></span>
+     
+    News
+  </a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -124,15 +162,15 @@
     </div>
 
     <pre class="usage"><span class='fu'>jc_tombola</span>(
-  <span class='no'>data</span>,
-  <span class='no'>members</span>,
-  <span class='no'>group</span>,
-  <span class='no'>gr_lvl</span>,
-  <span class='no'>status</span>,
-  <span class='no'>st_lvl</span>,
-  <span class='no'>frq</span>,
-  <span class='no'>date</span>,
-  <span class='kw'>seed</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+  <span class='kw'>data</span>,
+  <span class='kw'>members</span>,
+  <span class='kw'>group</span>,
+  <span class='kw'>gr_lvl</span>,
+  <span class='kw'>status</span>,
+  <span class='kw'>st_lvl</span>,
+  <span class='kw'>frq</span>,
+  <span class='kw'>date</span>,
+  seed = <span class='kw'>NULL</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -187,34 +225,35 @@ are: active or spectator. Only the active members will enter in the schedule.</p
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) {
 
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>inti</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>googlesheets4</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>tidyverse</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/flavjack/inti'>inti</a></span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span>)
 
-<span class='no'>url</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
+<span class='kw'>url</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
 , <span class='st'>"15TaF0lCCByg0dgOLqfoTlLbAWnau8IiLOklpS4cvm4M/edit#gid=272604925"</span>)
-<span class='no'>gs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span>(<span class='no'>url</span>)
+
+<span class='kw'>gs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span>(<span class='kw'>url</span>)
 <span class='co'># browseURL(url)</span>
 
-<span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span>(<span class='kw'>gargle_oauth_email</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='kw'>jc</span> <span class='op'>&lt;-</span>  <span class='kw'>gs</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"members"</span>)
 
-<span class='no'>jc</span> <span class='kw'>&lt;-</span>  <span class='no'>gs</span> <span class='kw'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"members"</span>)
+<span class='kw'>jc</span> <span class='op'>%&gt;%</span> <span class='fu'>jc_tombola</span>(data = <span class='kw'>.</span>
+                  , members = <span class='st'>"Member"</span>
+                  , group = <span class='st'>"Language"</span>
+                  , gr_lvl = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"english"</span>, <span class='st'>"spanish"</span>)
+                  , status = <span class='st'>"Status"</span>
+                  , st_lvl = <span class='st'>"activo"</span>
+                  , frq = <span class='fl'>7</span>
+                  , date = <span class='st'>"2020-06-17"</span>
+                  , seed = <span class='fl'>2013</span>
+                  ) <span class='op'>%&gt;%</span>
+                  <span class='fu'><a href='web_table.html'>web_table</a></span>(rnames = <span class='fl'>TRUE</span>
+                  , caption = <span class='st'>"JC"</span>)
 
-<span class='no'>jc</span> <span class='kw'>%&gt;%</span> <span class='fu'>jc_tombola</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>.</span>
-                  , <span class='kw'>members</span> <span class='kw'>=</span> <span class='st'>"Member"</span>
-                  , <span class='kw'>group</span> <span class='kw'>=</span> <span class='st'>"Language"</span>
-                  , <span class='kw'>gr_lvl</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"english"</span>, <span class='st'>"spanish"</span>)
-                  , <span class='kw'>status</span> <span class='kw'>=</span> <span class='st'>"Status"</span>
-                  , <span class='kw'>st_lvl</span> <span class='kw'>=</span> <span class='st'>"activo"</span>
-                  , <span class='kw'>frq</span> <span class='kw'>=</span> <span class='fl'>7</span>
-                  , <span class='kw'>date</span> <span class='kw'>=</span> <span class='st'>"2020-06-17"</span>
-                  , <span class='kw'>seed</span> <span class='kw'>=</span> <span class='fl'>2013</span>
-                  ) <span class='kw'>%&gt;%</span>
-                  <span class='fu'><a href='web_table.html'>web_table</a></span>(<span class='kw'>rnames</span> <span class='kw'>=</span> <span class='no'>T</span>, <span class='kw'>caption</span> <span class='kw'>=</span> <span class='st'>"JC"</span>)
+}
 
-}</div></pre>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -230,7 +269,7 @@ are: active or spectator. Only the active members will enter in the schedule.</p
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

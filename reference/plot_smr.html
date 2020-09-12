@@ -8,12 +8,19 @@
 
 <title>Plot summary data — plot_smr • inti</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
@@ -41,6 +48,7 @@
 
 <meta property="og:title" content="Plot summary data — plot_smr" />
 <meta property="og:description" content="Graph summary data into bar o line plot" />
+<meta property="og:image" content="https://flavjack.github.io/inti/reference/figures/logo.png" />
 
 
 
@@ -54,6 +62,16 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113308628-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113308628-1');
+</script>
 
 
   </head>
@@ -80,18 +98,38 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fa fa-home"></span>
      
+    
   </a>
 </li>
 <li>
-  <a href="../articles/inti.html">Get started</a>
+  <a href="../articles/inti.html">
+    <span class="fa fa-seedling"></span>
+     
+    Get started
+  </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../articles/heritability.html">
+    <span class="fa fa-book"></span>
+     
+    Articles
+  </a>
 </li>
 <li>
-  <a href="../news/index.html">Changelog</a>
+  <a href="../reference/index.html">
+    <span class="fa fa-file-code"></span>
+     
+    Functions
+  </a>
+</li>
+<li>
+  <a href="../news/index.html">
+    <span class="fa fa-file-alt"></span>
+     
+    News
+  </a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -124,19 +162,19 @@
     </div>
 
     <pre class="usage"><span class='fu'>plot_smr</span>(
-  <span class='no'>data</span>,
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>groups</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>glab</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>limits</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>brakes</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>sig</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>error</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>legend</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+  <span class='kw'>data</span>,
+  type = <span class='kw'>NULL</span>,
+  x = <span class='kw'>NULL</span>,
+  y = <span class='kw'>NULL</span>,
+  groups = <span class='kw'>NULL</span>,
+  xlab = <span class='kw'>NULL</span>,
+  ylab = <span class='kw'>NULL</span>,
+  glab = <span class='kw'>NULL</span>,
+  limits = <span class='kw'>NULL</span>,
+  brakes = <span class='kw'>NULL</span>,
+  sig = <span class='kw'>NULL</span>,
+  error = <span class='kw'>NULL</span>,
+  legend = <span class='kw'>NULL</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -207,31 +245,31 @@ function. Its contain all the parameter for the plot.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) {
 
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>inti</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>googlesheets4</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>tidyverse</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/flavjack/inti'>inti</a></span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span>)
 
-<span class='no'>url</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
+<span class='kw'>url</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
               , <span class='st'>"15r7ZwcZZHbEgltlF6gSFvCTFA-CFzVBWwg3mFlRyKPs/edit#gid=172957346"</span>)
 <span class='co'># browseURL(url)</span>
-<span class='no'>gs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span>(<span class='no'>url</span>)
+<span class='kw'>gs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span>(<span class='kw'>url</span>)
 
-(<span class='no'>data</span> <span class='kw'>&lt;-</span> <span class='no'>gs</span> <span class='kw'>%&gt;%</span>
-    <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"plot"</span>))
+(<span class='kw'>data</span> <span class='op'>&lt;-</span> <span class='kw'>gs</span> <span class='op'>%&gt;%</span>
+    <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"LA"</span>))
 
-<span class='fu'>plot_smr</span>(<span class='no'>data</span>)
+<span class='fu'>plot_smr</span>(<span class='kw'>data</span>)
 
-<span class='fu'>plot_smr</span>(<span class='no'>data</span>
-         , <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"bar"</span>
-         , <span class='kw'>limits</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>14000</span>)
-         , <span class='kw'>brakes</span> <span class='kw'>=</span> <span class='fl'>2000</span>
-         , <span class='kw'>sig</span> <span class='kw'>=</span> <span class='st'>"sig"</span>
-         , <span class='kw'>error</span> <span class='kw'>=</span> <span class='st'>"ste"</span>
-         , <span class='kw'>legend</span> <span class='kw'>=</span> <span class='st'>"left"</span>
+<span class='fu'>plot_smr</span>(<span class='kw'>data</span>
+         , type = <span class='st'>"bar"</span>
+         , limits = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>14000</span>)
+         , brakes = <span class='fl'>2000</span>
+         , sig = <span class='st'>"sig"</span>
+         , error = <span class='st'>"ste"</span>
          )
-}</div></pre>
+}
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -247,7 +285,7 @@ function. Its contain all the parameter for the plot.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

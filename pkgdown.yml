@@ -1,7 +1,8 @@
 pandoc: 2.7.3
-pkgdown: 1.5.1
+pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
+  heritability: heritability.html
   inti: inti.html
-last_built: 2020-09-03T22:07Z
+last_built: 2020-09-12T10:57Z
 
