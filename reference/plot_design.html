@@ -215,7 +215,7 @@ examples.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'># \donttest{</span>
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) {
 
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/flavjack/inti'>inti</a></span>)
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span>)
@@ -228,33 +228,24 @@ examples.</p></td>
 
 (<span class='kw'>fb</span> <span class='op'>&lt;-</span> <span class='kw'>gs</span> <span class='op'>%&gt;%</span>
     <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"tarpuy"</span>))
-</div><div class='output co'>#&gt; <span class='error'>Error: Can't get Google credentials.</span>
-#&gt; <span class='error'>Are you running googlesheets4 in a non-interactive session? Consider:</span>
-#&gt; <span class='error'>  * `gs4_deauth()` to prevent the attempt to get credentials.</span>
-#&gt; <span class='error'>  * Call `gs4_auth()` directly with all necessary specifics.</span>
-#&gt; <span class='error'>See gargle's "Non-interactive auth" vignette for more details:</span>
-#&gt; <span class='error'>https://gargle.r-lib.org/articles/non-interactive-auth.html</span></div><div class='input'>
+
 <span class='kw'>data</span> <span class='op'>&lt;-</span> <span class='kw'>fb</span> <span class='op'>%&gt;%</span> <span class='kw'>inti</span>::<span class='fu'><a href='fieldbook_design.html'>fieldbook_design</a></span>(n_factors = <span class='fl'>2</span>
                                       , type = <span class='st'>"rcbd"</span>
                                       , rep = <span class='fl'>3</span>) <span class='op'>%&gt;%</span> <span class='fu'><a href='https://purrr.tidyverse.org/reference/pluck.html'>pluck</a></span>(<span class='st'>"design"</span>)
-</div><div class='output co'>#&gt; <span class='error'>Error in eval(lhs, parent, parent): object 'fb' not found</span></div><div class='input'>
+
 <span class='fu'>plot_design</span>(<span class='kw'>data</span>
             , factor = <span class='st'>"temp"</span>
             , dim = <span class='st'>"block"</span>
             )
-</div><div class='output co'>#&gt; <span class='warning'>Warning: NAs introduced by coercion</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `mutate_()` is deprecated as of dplyr 0.7.0.</span>
-#&gt; <span class='warning'>Please use `mutate()` instead.</span>
-#&gt; <span class='warning'>See vignette('programming') for more help</span>
-#&gt; <span class='warning'><span style='color: #555555;'>This warning is displayed once every 8 hours.</span><span></span>
-#&gt; <span class='warning'></span><span style='color: #555555;'>Call `lifecycle::last_warnings()` to see where this warning was generated.</span><span></span></div><div class='output co'>#&gt; <span class='error'>Error in UseMethod("mutate_"): no applicable method for 'mutate_' applied to an object of class "function"</span></div><div class='input'>
+
 <span class='fu'>plot_design</span>(<span class='kw'>data</span>
             , factor = <span class='st'>"temp"</span>
             , dim = <span class='st'>"9x5"</span>
             )
-</div><div class='output co'>#&gt; <span class='error'>Error in UseMethod("mutate_"): no applicable method for 'mutate_' applied to an object of class "function"</span></div><div class='input'>
-<span class='co'># }</span>
 
-</div></span></pre>
+}
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

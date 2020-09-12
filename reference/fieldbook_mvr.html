@@ -193,7 +193,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'># \donttest{</span>
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) {
 
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/flavjack/inti'>inti</a></span>)
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span>)
@@ -206,33 +206,23 @@
 
 (<span class='kw'>data</span> <span class='op'>&lt;-</span> <span class='kw'>gs</span> <span class='op'>%&gt;%</span>
     <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"fb"</span>))
-</div><div class='output co'>#&gt; <span class='error'>Error: Can't get Google credentials.</span>
-#&gt; <span class='error'>Are you running googlesheets4 in a non-interactive session? Consider:</span>
-#&gt; <span class='error'>  * `gs4_deauth()` to prevent the attempt to get credentials.</span>
-#&gt; <span class='error'>  * Call `gs4_auth()` directly with all necessary specifics.</span>
-#&gt; <span class='error'>See gargle's "Non-interactive auth" vignette for more details:</span>
-#&gt; <span class='error'>https://gargle.r-lib.org/articles/non-interactive-auth.html</span></div><div class='input'>
+
 (<span class='kw'>fb_smr</span> <span class='op'>&lt;-</span> <span class='kw'>gs</span> <span class='op'>%&gt;%</span>
   <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"fbsm"</span>))
-</div><div class='output co'>#&gt; <span class='error'>Error: Can't get Google credentials.</span>
-#&gt; <span class='error'>Are you running googlesheets4 in a non-interactive session? Consider:</span>
-#&gt; <span class='error'>  * `gs4_deauth()` to prevent the attempt to get credentials.</span>
-#&gt; <span class='error'>  * Call `gs4_auth()` directly with all necessary specifics.</span>
-#&gt; <span class='error'>See gargle's "Non-interactive auth" vignette for more details:</span>
-#&gt; <span class='error'>https://gargle.r-lib.org/articles/non-interactive-auth.html</span></div><div class='input'>
+
 
 <span class='kw'>mvr</span> <span class='op'>&lt;-</span> <span class='fu'>fieldbook_mvr</span>(<span class='kw'>data</span>, <span class='kw'>fb_smr</span>
 , summary_by = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"genotype"</span>, <span class='st'>"treat"</span>), groups = <span class='st'>"treat"</span>)
-</div><div class='output co'>#&gt; <span class='error'>Error in eval(lhs, parent, parent): object 'fb_smr' not found</span></div><div class='input'>
+
 <span class='kw'>FactoMineR</span>::<span class='fu'><a href='https://rdrr.io/pkg/FactoMineR/man/plot.PCA.html'>plot.PCA</a></span>(<span class='kw'>mvr</span><span class='op'>$</span><span class='kw'>pca</span>
                      , choix = <span class='st'>"ind"</span>
                      , habillage = <span class='kw'>mvr</span><span class='op'>$</span><span class='kw'>param</span><span class='op'>$</span><span class='kw'>groups_n</span>
                      , invisible = <span class='st'>"quali"</span>
 )
-</div><div class='output co'>#&gt; <span class='error'>Error in FactoMineR::plot.PCA(mvr$pca, choix = "ind", habillage = mvr$param$groups_n,     invisible = "quali"): object 'mvr' not found</span></div><div class='input'>
+
 <span class='kw'>FactoMineR</span>::<span class='fu'><a href='https://rdrr.io/pkg/FactoMineR/man/plot.HCPC.html'>plot.HCPC</a></span>(<span class='kw'>mvr</span><span class='op'>$</span><span class='kw'>hcpc</span>)
-</div><div class='output co'>#&gt; <span class='error'>Error in FactoMineR::plot.HCPC(mvr$hcpc): object 'mvr' not found</span></div><div class='input'>
-<span class='co'># }</span>
+
+}
 
 </div></pre>
   </div>

@@ -210,7 +210,7 @@ treatment1 and treatment2: <code>treatment1:treatment2</code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'># \donttest{</span>
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) {
 
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/flavjack/inti'>inti</a></span>)
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span>)
@@ -222,22 +222,17 @@ treatment1 and treatment2: <code>treatment1:treatment2</code>.</p>
 
 (<span class='kw'>data</span> <span class='op'>&lt;-</span> <span class='kw'>gs</span> <span class='op'>%&gt;%</span>
     <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"fb"</span>))
-</div><div class='output co'>#&gt; <span class='error'>Error: Can't get Google credentials.</span>
-#&gt; <span class='error'>Are you running googlesheets4 in a non-interactive session? Consider:</span>
-#&gt; <span class='error'>  * `gs4_deauth()` to prevent the attempt to get credentials.</span>
-#&gt; <span class='error'>  * Call `gs4_auth()` directly with all necessary specifics.</span>
-#&gt; <span class='error'>See gargle's "Non-interactive auth" vignette for more details:</span>
-#&gt; <span class='error'>https://gargle.r-lib.org/articles/non-interactive-auth.html</span></div><div class='input'>
+
 <span class='kw'>smrfb</span> <span class='op'>&lt;-</span> <span class='fu'>fieldbook_summary</span>(<span class='kw'>data</span>
                  , last_factor = <span class='st'>"dosis"</span>
                  , model_facts = <span class='st'>"bloque + cultivar*fuenteN*dosis"</span>
                  , comp_facts = <span class='st'>"cultivar:fuenteN:dosis"</span>
                  )
-</div><div class='output co'>#&gt; <span class='error'>Error in UseMethod("select_"): no applicable method for 'select_' applied to an object of class "function"</span></div><div class='input'><span class='kw'>smrfb</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'smrfb' not found</span></div><div class='input'>
+<span class='kw'>smrfb</span>
+
 <span class='kw'>smrfb</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/sheet_write.html'>write_sheet</a></span>(ss = <span class='kw'>gs</span>, sheet = <span class='st'>"fbsmr"</span>)
-</div><div class='output co'>#&gt; <span class='error'>Error in eval(lhs, parent, parent): object 'smrfb' not found</span></div><div class='input'>
-<span class='co'># }</span>
+
+}
 
 </div></pre>
   </div>

@@ -208,7 +208,7 @@ symbol using <code>{hypen}</code> in your table. <code>notation</code> could be 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='co'># \donttest{</span>
+<span class='co'>if</span> (<span class='fl'>FALSE</span>) {
 
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span>)
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/flavjack/inti'>inti</a></span>)
@@ -221,17 +221,12 @@ symbol using <code>{hypen}</code> in your table. <code>notation</code> could be 
 
 <span class='kw'>table</span> <span class='op'>&lt;-</span> <span class='kw'>gs</span> <span class='op'>%&gt;%</span>
     <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"footnotes"</span>)
-</div><div class='output co'>#&gt; <span class='error'>Error: Can't get Google credentials.</span>
-#&gt; <span class='error'>Are you running googlesheets4 in a non-interactive session? Consider:</span>
-#&gt; <span class='error'>  * `gs4_deauth()` to prevent the attempt to get credentials.</span>
-#&gt; <span class='error'>  * Call `gs4_auth()` directly with all necessary specifics.</span>
-#&gt; <span class='error'>See gargle's "Non-interactive auth" vignette for more details:</span>
-#&gt; <span class='error'>https://gargle.r-lib.org/articles/non-interactive-auth.html</span></div><div class='input'>
+
 <span class='kw'>table</span> <span class='op'>%&gt;%</span> <span class='kw'>inti</span>::<span class='fu'>include_table</span>(label = <span class='st'>"_Nota:_"</span>
                               , notation = <span class='st'>"num"</span>
 )
-</div><div class='output co'>#&gt; <span class='error'>Error in data[1]: object of type 'closure' is not subsettable</span></div><div class='input'>
-<span class='co'># }</span>
+
+}
 
 </div></pre>
   </div>
