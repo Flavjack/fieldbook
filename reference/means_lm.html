@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Figure with caption and notes — include_figure • inti</title>
+<title>Mean comparison — means_lm • inti</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Figure with caption and notes — include_figure" />
-<meta property="og:description" content="Include figures with title and notes using a data base" />
+<meta property="og:title" content="Mean comparison — means_lm" />
+<meta property="og:description" content="Function to calculate the means using Linear models (lm or aov)" />
 <meta property="og:image" content="https://flavjack.github.io/inti/reference/figures/logo.png" />
 
 
@@ -152,22 +152,28 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Figure with caption and notes</h1>
-    <small class="dont-index">Source: <a href='https://github.com/flavjack/inti/blob/master/R/include_figure.R'><code>R/include_figure.R</code></a></small>
-    <div class="hidden name"><code>include_figure.Rd</code></div>
+    <h1>Mean comparison</h1>
+    <small class="dont-index">Source: <a href='https://github.com/flavjack/inti/blob/master/R/means_lm.R'><code>R/means_lm.R</code></a></small>
+    <div class="hidden name"><code>means_lm.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Include figures with title and notes using a data base</p>
+    <p>Function to calculate the means using Linear models (lm or aov)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>include_figure</span>(
-  data = <span class='kw'>NULL</span>,
-  <span class='kw'>figure</span>,
-  caption = <span class='kw'>NULL</span>,
-  notes = <span class='kw'>NULL</span>,
-  label = <span class='st'>"Source:"</span>,
-  table = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"figures"</span>, <span class='st'>"caption"</span>, <span class='st'>"notes"</span>, <span class='st'>"url"</span>)
+    <pre class="usage"><span class='fu'>means_lm</span>(
+  <span class='kw'>data</span>,
+  <span class='kw'>trait</span>,
+  <span class='kw'>model</span>,
+  <span class='kw'>comparison</span>,
+  test = <span class='st'>"SNK"</span>,
+  anova = <span class='fl'>FALSE</span>,
+  plot_diag = <span class='fl'>FALSE</span>,
+  plot_treat = <span class='kw'>NULL</span>,
+  plot_groups = <span class='kw'>NULL</span>,
+  tab_vars = <span class='kw'>NULL</span>,
+  sep = <span class='kw'>NULL</span>,
+  digits = <span class='fl'>3</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -175,42 +181,66 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>Data frame with the figures information. See details.</p></td>
+      <td><p>Experimental design data frame with the factors and traits.</p></td>
     </tr>
     <tr>
-      <th>figure</th>
-      <td><p>Name or path of the figure.</p></td>
+      <th>trait</th>
+      <td><p>Name of the trait.</p></td>
     </tr>
     <tr>
-      <th>caption</th>
-      <td><p>Manual figure caption (default = NULL).</p></td>
+      <th>model</th>
+      <td><p>The effects in the model. See examples.</p></td>
     </tr>
     <tr>
-      <th>notes</th>
-      <td><p>Manual figure notes (default = NULL).</p></td>
+      <th>comparison</th>
+      <td><p>Factor for the comparisons.</p></td>
     </tr>
     <tr>
-      <th>label</th>
-      <td><p>Label for start the footnote (default = "Source:").</p></td>
+      <th>test</th>
+      <td><p>Test comparison (default = "SNK"). Others: "TUKEY" &amp; "DUNCAN".</p></td>
     </tr>
     <tr>
-      <th>table</th>
-      <td><p>Columns in the table (default = c("figures", "caption", "notes",
-"url")).</p></td>
+      <th>anova</th>
+      <td><p>ANOVA table (default = FALSE).</p></td>
+    </tr>
+    <tr>
+      <th>plot_diag</th>
+      <td><p>Show diagnostic plots (default = FALSE).</p></td>
+    </tr>
+    <tr>
+      <th>plot_treat</th>
+      <td><p>Treat of comparison in dot plot (default = NULL). See
+example.</p></td>
+    </tr>
+    <tr>
+      <th>plot_groups</th>
+      <td><p>Group of comparison in dot plot (default = NULL). See
+example.</p></td>
+    </tr>
+    <tr>
+      <th>tab_vars</th>
+      <td><p>Specific the variables in the summary table (default = NULL).</p></td>
+    </tr>
+    <tr>
+      <th>sep</th>
+      <td><p>Separator between the variables when use <code>tab_vars</code>. See
+details.</p></td>
+    </tr>
+    <tr>
+      <th>digits</th>
+      <td><p>Number of digits in the table (default = 3).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Figure with caption and notes</p>
+    <p>A list with two objects:</p>
+<p>1. Summary statistics.</p>
+<p>2. Means with the mean comparisons test.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The data frame should contain 4 columns specified in <code>table</code>:</p>
-<p>1. <code>figures</code>.</p>
-<p>2. <code>caption</code>.</p>
-<p>3. <code>notes</code>.</p>
-<p>4. <code>url</code> or <code>url</code>.</p>
-<p>If you don't use a a data frame you provide the information manually.</p>
+    <p>Using <code>tab_vars</code> select the variables shown the adjusted mean table with
+the <code>sep</code>. Mean comparison at p &lt; 0.05.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
