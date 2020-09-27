@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Build markdown o bookdown template — rticles • inti</title>
+<title>Rticles template — create_rticles • inti</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Build markdown o bookdown template — rticles" />
-<meta property="og:description" content="Invoke RStudio addin to create markdown documents" />
+<meta property="og:title" content="Rticles template — create_rticles" />
+<meta property="og:description" content="Create a complete example for markdown o bookdown documents" />
 <meta property="og:image" content="https://flavjack.github.io/inti/reference/figures/logo.png" />
 
 
@@ -152,44 +152,61 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Build markdown o bookdown template</h1>
-    <small class="dont-index">Source: <a href='https://github.com/flavjack/inti/blob/master/R/rticles.R'><code>R/rticles.R</code></a></small>
-    <div class="hidden name"><code>rticles.Rd</code></div>
+    <h1>Rticles template</h1>
+    <small class="dont-index">Source: <a href='https://github.com/flavjack/inti/blob/master/R/create_rticles.R'><code>R/create_rticles.R</code></a></small>
+    <div class="hidden name"><code>create_rticles.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Invoke RStudio addin to create markdown documents</p>
+    <p>Create a complete example for markdown o bookdown documents</p>
     </div>
 
-    <pre class="usage"><span class='fu'>rticles</span>(dependencies = <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>create_rticles</span>(
+  path = <span class='kw'>NULL</span>,
+  type = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"markdown"</span>, <span class='st'>"bookdown"</span>),
+  name = <span class='st'>"manuscript"</span>,
+  project = <span class='fl'>TRUE</span>,
+  server = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"local"</span>, <span class='st'>"web"</span>)
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>dependencies</th>
-      <td><p>Install package dependencies for run the app</p></td>
+      <th>path</th>
+      <td><p>Directory for create the files.</p></td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td><p>Document type (default = "markdown").</p></td>
+    </tr>
+    <tr>
+      <th>name</th>
+      <td><p>Name of the main document (default = "manuscript").</p></td>
+    </tr>
+    <tr>
+      <th>project</th>
+      <td><p>Create a R project (default = TRUE). See details.</p></td>
+    </tr>
+    <tr>
+      <th>server</th>
+      <td><p>How create the dependencies (default = "local").</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p><a href='https://github.com/flavjack/rticles'>https://github.com/flavjack/rticles</a></p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Shiny app</p>
+    <p>folder and files</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Create all the files in the present work directory. It is recommended use
-".Rproj" for bookdown documents. After create the ".Rproj" file. Open the
-".Rprj" and you should have the possibility to compile the book.</p>
+    <p>Create all the files in the path directory. It is recommended use ".Rproj".
+After create the project Open the ".Rprj" file. Compile the document and you
+will see the example. If you already have a folder and select such as
+"bookdown" is necessary change the main (.rmd) file to index.rmd.</p>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='co'>if</span>(<span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span>()){
-
- <span class='kw'>inti</span>::<span class='fu'>rticles</span>()
-
-}
-
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
