@@ -170,15 +170,14 @@
   year.n = <span class='fl'>1</span>,
   loc.name = <span class='kw'>NULL</span>,
   year.name = <span class='kw'>NULL</span>,
-  <span class='kw'>fix.model</span>,
   <span class='kw'>ran.model</span>,
+  <span class='kw'>fix.model</span>,
   summary = <span class='fl'>FALSE</span>,
-  blues = <span class='fl'>FALSE</span>,
-  effects = <span class='fl'>FALSE</span>,
+  emmeans = <span class='fl'>FALSE</span>,
+  weights = <span class='kw'>NULL</span>,
   plot_diag = <span class='fl'>FALSE</span>,
   plot_dots = <span class='kw'>NULL</span>,
-  outliers.rm = <span class='fl'>FALSE</span>,
-  weights = <span class='kw'>NULL</span>
+  outliers.rm = <span class='fl'>FALSE</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -217,24 +216,25 @@
       <td><p>Name of the years (default = NULL). See details.</p></td>
     </tr>
     <tr>
-      <th>fix.model</th>
-      <td><p>The fixed effects in the model. See examples.</p></td>
-    </tr>
-    <tr>
       <th>ran.model</th>
       <td><p>The random effects in the model. See examples.</p></td>
+    </tr>
+    <tr>
+      <th>fix.model</th>
+      <td><p>The fixed effects in the model. See examples.</p></td>
     </tr>
     <tr>
       <th>summary</th>
       <td><p>Print summary from random model (default = FALSE).</p></td>
     </tr>
     <tr>
-      <th>blues</th>
-      <td><p>Calculate the BLUEs (default = FALSE).</p></td>
+      <th>emmeans</th>
+      <td><p>Use emmeans for calculate the BLUEs (default = FALSE).</p></td>
     </tr>
     <tr>
-      <th>effects</th>
-      <td><p>Random effects instead of the BLUPs (default = FALSE).</p></td>
+      <th>weights</th>
+      <td><p>an optional vector of ‘prior weights’ to be used in the
+fitting process (default = NULL).</p></td>
     </tr>
     <tr>
       <th>plot_diag</th>
@@ -248,11 +248,6 @@ examples.</p></td>
     <tr>
       <th>outliers.rm</th>
       <td><p>Remove outliers (default = FALSE). See references.</p></td>
-    </tr>
-    <tr>
-      <th>weights</th>
-      <td><p>an optional vector of ‘prior weights’ to be used in the
-fitting process (default = NULL).</p></td>
     </tr>
     </table>
 
@@ -302,32 +297,18 @@ Theoretical and Applied Genetics, vol. 129, no. 4, Apr. 2016.</p>
             , trait = <span class='st'>"yield"</span>
             , gen.name = <span class='st'>"gen"</span>
             , rep.n = <span class='fl'>3</span>
-            , fix.model = <span class='st'>"rep + (1|rep:block) + gen"</span>
-            , ran.model = <span class='st'>"rep + (1|rep:block) + (1|gen)"</span>
-            , blues = <span class='fl'>TRUE</span>
+            , fix.model = <span class='st'>"1 + rep + (1|rep:block) + gen"</span>
+            , ran.model = <span class='st'>"1 + rep + (1|rep:block) + (1|gen)"</span>
             , plot_diag = <span class='fl'>TRUE</span>
-            , outliers.rm = <span class='fl'>FALSE</span>
+            , emmeans = <span class='fl'>TRUE</span>
             )
-</div><div class='img'><img src='H2cal-1.png' alt='' width='700' height='433' /></div><div class='input'> <span class='kw'>hr</span><span class='op'>$</span><span class='kw'>tabsmr</span>
+</div><div class='img'><img src='H2cal-1.png' alt='' width='700' height='433' /></div><div class='input'>            
+ <span class='kw'>hr</span><span class='op'>$</span><span class='kw'>tabsmr</span>
 </div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 1 x 16</span><span>
 #&gt;   variable   rep  geno   env  year  mean   std   min   max   V.g V.gxl V.gxy
 #&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #555555;'>1</span><span> yield        3    24     1     1  4.48 0.415  3.50  5.11 0.143     0     0
-#&gt; </span><span style='color: #555555;'># … with 4 more variables: V.e </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, h2.s </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, h2.c </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, h2.p </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div><div class='input'> <span class='kw'>hr</span><span class='op'>$</span><span class='kw'>blups</span>
-</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 24 x 2</span><span>
-#&gt;    gen   yield
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> G01    5.02
-#&gt; </span><span style='color: #555555;'> 2</span><span> G02    4.52
-#&gt; </span><span style='color: #555555;'> 3</span><span> G03    3.73
-#&gt; </span><span style='color: #555555;'> 4</span><span> G04    4.52
-#&gt; </span><span style='color: #555555;'> 5</span><span> G05    4.99
-#&gt; </span><span style='color: #555555;'> 6</span><span> G06    4.56
-#&gt; </span><span style='color: #555555;'> 7</span><span> G07    4.21
-#&gt; </span><span style='color: #555555;'> 8</span><span> G08    4.58
-#&gt; </span><span style='color: #555555;'> 9</span><span> G09    3.71
-#&gt; </span><span style='color: #555555;'>10</span><span> G10    4.43
-#&gt; </span><span style='color: #555555;'># … with 14 more rows</span><span></div><div class='input'> <span class='kw'>hr</span><span class='op'>$</span><span class='kw'>blues</span>
+#&gt; </span><span style='color: #555555;'># … with 4 more variables: V.e </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, h2.s </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, h2.c </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, h2.p </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div><div class='input'> <span class='kw'>hr</span><span class='op'>$</span><span class='kw'>blues</span>
 </div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 24 x 6</span><span>
 #&gt;    gen   yield    SE    df lower.CL upper.CL
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
@@ -341,6 +322,20 @@ Theoretical and Applied Genetics, vol. 129, no. 4, Apr. 2016.</p>
 #&gt; </span><span style='color: #555555;'> 8</span><span> G08    4.53 0.199  44.3     4.13     4.93
 #&gt; </span><span style='color: #555555;'> 9</span><span> G09    3.50 0.199  44.3     3.10     3.90
 #&gt; </span><span style='color: #555555;'>10</span><span> G10    4.37 0.199  44.3     3.97     4.77
+#&gt; </span><span style='color: #555555;'># … with 14 more rows</span><span></div><div class='input'> <span class='kw'>hr</span><span class='op'>$</span><span class='kw'>blups</span>
+</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 24 x 2</span><span>
+#&gt;    gen   yield
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> G01    5.02
+#&gt; </span><span style='color: #555555;'> 2</span><span> G02    4.52
+#&gt; </span><span style='color: #555555;'> 3</span><span> G03    3.73
+#&gt; </span><span style='color: #555555;'> 4</span><span> G04    4.52
+#&gt; </span><span style='color: #555555;'> 5</span><span> G05    4.99
+#&gt; </span><span style='color: #555555;'> 6</span><span> G06    4.56
+#&gt; </span><span style='color: #555555;'> 7</span><span> G07    4.21
+#&gt; </span><span style='color: #555555;'> 8</span><span> G08    4.58
+#&gt; </span><span style='color: #555555;'> 9</span><span> G09    3.71
+#&gt; </span><span style='color: #555555;'>10</span><span> G10    4.43
 #&gt; </span><span style='color: #555555;'># … with 14 more rows</span><span></div><div class='input'> 
 </div></span></pre>
   </div>

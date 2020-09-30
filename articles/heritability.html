@@ -218,10 +218,10 @@
             , rep.n = <span class="fl">3</span>
             , fix.model = <span class="st">"rep + (1|rep:block) + gen"</span>
             , ran.model = <span class="st">"rep + (1|rep:block) + (1|gen)"</span>
-            , blues = <span class="kw">T</span>
+            , emmeans = <span class="fl">TRUE</span>
             , plot_diag = <span class="fl">TRUE</span>
             , plot_dots = <span class="st">"rep"</span>
-            , outliers.rm = <span class="fl">TRUE</span>
+            , outliers.rm = <span class="fl">FALSE</span>
             )
 </pre></div>
 <p><img src="heritability_files/figure-html/unnamed-chunk-2-1.png" width="98%" style="display: block; margin: auto;"></p>
@@ -236,29 +236,29 @@
 <span class="co">#&gt;    Data: dt.rm</span>
 <span class="co">#&gt; Weights: weights</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; REML criterion at convergence: 78</span>
+<span class="co">#&gt; REML criterion at convergence: 93.2</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Scaled residuals: </span>
 <span class="co">#&gt;      Min       1Q   Median       3Q      Max </span>
-<span class="co">#&gt; -1.96200 -0.28318  0.04692  0.42242  2.20560 </span>
+<span class="co">#&gt; -1.78956 -0.37299  0.02882  0.37245  2.65803 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Random effects:</span>
 <span class="co">#&gt;  Groups    Name        Variance Std.Dev.</span>
-<span class="co">#&gt;  gen       (Intercept) 0.14584  0.3819  </span>
-<span class="co">#&gt;  rep:block (Intercept) 0.07895  0.2810  </span>
-<span class="co">#&gt;  Residual              0.05334  0.2310  </span>
-<span class="co">#&gt; Number of obs: 71, groups:  gen, 24; rep:block, 18</span>
+<span class="co">#&gt;  gen       (Intercept) 0.14290  0.3780  </span>
+<span class="co">#&gt;  rep:block (Intercept) 0.07022  0.2650  </span>
+<span class="co">#&gt;  Residual              0.08162  0.2857  </span>
+<span class="co">#&gt; Number of obs: 72, groups:  gen, 24; rep:block, 18</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Fixed effects:</span>
 <span class="co">#&gt;             Estimate Std. Error t value</span>
-<span class="co">#&gt; (Intercept)   4.4597     0.1471  30.318</span>
-<span class="co">#&gt; repR2         0.3564     0.1759   2.026</span>
-<span class="co">#&gt; repR3        -0.3555     0.1759  -2.021</span>
+<span class="co">#&gt; (Intercept)   4.5182     0.1451  31.136</span>
+<span class="co">#&gt; repR2         0.2978     0.1738   1.714</span>
+<span class="co">#&gt; repR3        -0.4140     0.1738  -2.382</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Correlation of Fixed Effects:</span>
 <span class="co">#&gt;       (Intr) repR2 </span>
-<span class="co">#&gt; repR2 -0.601       </span>
-<span class="co">#&gt; repR3 -0.601  0.503</span>
+<span class="co">#&gt; repR2 -0.599       </span>
+<span class="co">#&gt; repR3 -0.599  0.500</span>
 </pre></div>
 </div>
 <div id="variance-component" class="section level2">
@@ -275,9 +275,9 @@
 <col width="4%">
 <col width="3%">
 <col width="4%">
+<col width="7%">
+<col width="8%">
 <col width="5%">
-<col width="7%">
-<col width="7%">
 <col width="7%">
 <col width="8%">
 <col width="4%">
@@ -311,17 +311,17 @@
 <td align="right">24</td>
 <td align="right">1</td>
 <td align="right">1</td>
-<td align="right">4.4318</td>
-<td align="right">0.419937</td>
-<td align="right">3.437591</td>
-<td align="right">5.035595</td>
-<td align="right">0.1458434</td>
+<td align="right">4.479517</td>
+<td align="right">0.4153925</td>
+<td align="right">3.4992</td>
+<td align="right">5.107699</td>
+<td align="right">0.1429021</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">0.0533381</td>
-<td align="right">0.8913393</td>
-<td align="right">0.8486282</td>
-<td align="right">0.9117696</td>
+<td align="right">0.0816171</td>
+<td align="right">0.8400678</td>
+<td align="right">0.7979968</td>
+<td align="right">0.7966375</td>
 </tr></tbody>
 </table>
 </div>
@@ -340,99 +340,99 @@
 <tbody>
 <tr class="odd">
 <td align="left">G01</td>
-<td align="right">4.967734</td>
+<td align="right">5.019434</td>
 </tr>
 <tr class="even">
 <td align="left">G02</td>
-<td align="right">4.473221</td>
+<td align="right">4.523213</td>
 </tr>
 <tr class="odd">
 <td align="left">G03</td>
-<td align="right">3.620271</td>
+<td align="right">3.733687</td>
 </tr>
 <tr class="even">
 <td align="left">G04</td>
-<td align="right">4.584676</td>
+<td align="right">4.524376</td>
 </tr>
 <tr class="odd">
 <td align="left">G05</td>
-<td align="right">4.571117</td>
+<td align="right">4.993200</td>
 </tr>
 <tr class="even">
 <td align="left">G06</td>
-<td align="right">4.495029</td>
+<td align="right">4.562890</td>
 </tr>
 <tr class="odd">
 <td align="left">G07</td>
-<td align="right">4.103546</td>
+<td align="right">4.209302</td>
 </tr>
 <tr class="even">
 <td align="left">G08</td>
-<td align="right">4.566418</td>
+<td align="right">4.580480</td>
 </tr>
 <tr class="odd">
 <td align="left">G09</td>
-<td align="right">3.555795</td>
+<td align="right">3.708318</td>
 </tr>
 <tr class="even">
 <td align="left">G10</td>
-<td align="right">4.334937</td>
+<td align="right">4.428877</td>
 </tr>
 <tr class="odd">
 <td align="left">G11</td>
-<td align="right">4.346410</td>
+<td align="right">4.321815</td>
 </tr>
 <tr class="even">
 <td align="left">G12</td>
-<td align="right">4.687456</td>
+<td align="right">4.744008</td>
 </tr>
 <tr class="odd">
 <td align="left">G13</td>
-<td align="right">4.712533</td>
+<td align="right">4.749915</td>
 </tr>
 <tr class="even">
 <td align="left">G14</td>
-<td align="right">4.775001</td>
+<td align="right">4.761650</td>
 </tr>
 <tr class="odd">
 <td align="left">G15</td>
-<td align="right">4.920382</td>
+<td align="right">4.942950</td>
 </tr>
 <tr class="even">
 <td align="left">G16</td>
-<td align="right">4.693132</td>
+<td align="right">4.719215</td>
 </tr>
 <tr class="odd">
 <td align="left">G17</td>
-<td align="right">4.547410</td>
+<td align="right">4.596328</td>
 </tr>
 <tr class="even">
 <td align="left">G18</td>
-<td align="right">4.362023</td>
+<td align="right">4.408069</td>
 </tr>
 <tr class="odd">
 <td align="left">G19</td>
-<td align="right">4.781144</td>
+<td align="right">4.807826</td>
 </tr>
 <tr class="even">
 <td align="left">G20</td>
-<td align="right">4.114060</td>
+<td align="right">4.179281</td>
 </tr>
 <tr class="odd">
 <td align="left">G21</td>
-<td align="right">4.748910</td>
+<td align="right">4.774382</td>
 </tr>
 <tr class="even">
 <td align="left">G22</td>
-<td align="right">4.579263</td>
+<td align="right">4.542339</td>
 </tr>
 <tr class="odd">
 <td align="left">G23</td>
-<td align="right">4.293791</td>
+<td align="right">4.341252</td>
 </tr>
 <tr class="even">
 <td align="left">G24</td>
-<td align="right">4.198864</td>
+<td align="right">4.265192</td>
 </tr>
 </tbody>
 </table>
@@ -456,326 +456,195 @@
 <tbody>
 <tr class="odd">
 <td align="left">G01</td>
-<td align="right">5.035595</td>
-<td align="right">0.1287046</td>
-<td align="right">42.59093</td>
-<td align="right">4.775965</td>
-<td align="right">5.295224</td>
+<td align="right">5.107699</td>
+<td align="right">0.1990122</td>
+<td align="right">44.32700</td>
+<td align="right">4.706700</td>
+<td align="right">5.508699</td>
 </tr>
 <tr class="even">
 <td align="left">G02</td>
-<td align="right">4.426944</td>
-<td align="right">0.1286734</td>
-<td align="right">42.58668</td>
-<td align="right">4.167376</td>
-<td align="right">4.686511</td>
+<td align="right">4.478532</td>
+<td align="right">0.1990122</td>
+<td align="right">44.32700</td>
+<td align="right">4.077533</td>
+<td align="right">4.879531</td>
 </tr>
 <tr class="odd">
 <td align="left">G03</td>
-<td align="right">3.534301</td>
-<td align="right">0.1308346</td>
-<td align="right">42.66688</td>
-<td align="right">3.270388</td>
-<td align="right">3.798214</td>
+<td align="right">3.499200</td>
+<td align="right">0.1990122</td>
+<td align="right">44.32700</td>
+<td align="right">3.098200</td>
+<td align="right">3.900199</td>
 </tr>
 <tr class="even">
 <td align="left">G04</td>
-<td align="right">4.591766</td>
-<td align="right">0.1305419</td>
-<td align="right">42.66130</td>
-<td align="right">4.328443</td>
-<td align="right">4.855089</td>
+<td align="right">4.490094</td>
+<td align="right">0.1990122</td>
+<td align="right">44.32700</td>
+<td align="right">4.089095</td>
+<td align="right">4.891094</td>
 </tr>
 <tr class="odd">
 <td align="left">G05</td>
-<td align="right">4.545263</td>
-<td align="right">0.1539083</td>
-<td align="right">40.56170</td>
-<td align="right">4.234337</td>
-<td align="right">4.856189</td>
+<td align="right">5.037210</td>
+<td align="right">0.1989050</td>
+<td align="right">44.28463</td>
+<td align="right">4.636417</td>
+<td align="right">5.438004</td>
 </tr>
 <tr class="even">
 <td align="left">G06</td>
-<td align="right">4.550213</td>
-<td align="right">0.1297772</td>
-<td align="right">42.61679</td>
-<td align="right">4.288424</td>
-<td align="right">4.812002</td>
+<td align="right">4.536662</td>
+<td align="right">0.1989050</td>
+<td align="right">44.28463</td>
+<td align="right">4.135868</td>
+<td align="right">4.937456</td>
 </tr>
 <tr class="odd">
 <td align="left">G07</td>
-<td align="right">4.050188</td>
-<td align="right">0.1288641</td>
-<td align="right">42.60147</td>
-<td align="right">3.790239</td>
-<td align="right">4.310138</td>
+<td align="right">4.111136</td>
+<td align="right">0.1990122</td>
+<td align="right">44.32700</td>
+<td align="right">3.710137</td>
+<td align="right">4.512135</td>
 </tr>
 <tr class="even">
 <td align="left">G08</td>
-<td align="right">4.252017</td>
-<td align="right">0.1534515</td>
-<td align="right">40.47391</td>
-<td align="right">3.941993</td>
-<td align="right">4.562041</td>
+<td align="right">4.527634</td>
+<td align="right">0.1990122</td>
+<td align="right">44.32700</td>
+<td align="right">4.126634</td>
+<td align="right">4.928633</td>
 </tr>
 <tr class="odd">
 <td align="left">G09</td>
-<td align="right">3.437591</td>
-<td align="right">0.1308101</td>
-<td align="right">42.66424</td>
-<td align="right">3.173727</td>
-<td align="right">3.701455</td>
+<td align="right">3.502181</td>
+<td align="right">0.1989050</td>
+<td align="right">44.28463</td>
+<td align="right">3.101387</td>
+<td align="right">3.902975</td>
 </tr>
 <tr class="even">
 <td align="left">G10</td>
-<td align="right">4.304469</td>
-<td align="right">0.1288617</td>
-<td align="right">42.60145</td>
-<td align="right">4.044525</td>
-<td align="right">4.564414</td>
+<td align="right">4.373200</td>
+<td align="right">0.1990122</td>
+<td align="right">44.32700</td>
+<td align="right">3.972200</td>
+<td align="right">4.774199</td>
 </tr>
 <tr class="odd">
 <td align="left">G11</td>
-<td align="right">4.359846</td>
-<td align="right">0.1300335</td>
-<td align="right">42.63849</td>
-<td align="right">4.097544</td>
-<td align="right">4.622148</td>
+<td align="right">4.283264</td>
+<td align="right">0.1990122</td>
+<td align="right">44.32700</td>
+<td align="right">3.882265</td>
+<td align="right">4.684263</td>
 </tr>
 <tr class="even">
 <td align="left">G12</td>
-<td align="right">4.766961</td>
-<td align="right">0.1298095</td>
-<td align="right">42.62006</td>
-<td align="right">4.505108</td>
-<td align="right">5.028815</td>
+<td align="right">4.755276</td>
+<td align="right">0.1990122</td>
+<td align="right">44.32700</td>
+<td align="right">4.354277</td>
+<td align="right">5.156276</td>
 </tr>
 <tr class="odd">
 <td align="left">G13</td>
-<td align="right">4.814309</td>
-<td align="right">0.1297867</td>
-<td align="right">42.61849</td>
-<td align="right">4.552501</td>
-<td align="right">5.076117</td>
+<td align="right">4.757913</td>
+<td align="right">0.1989050</td>
+<td align="right">44.28463</td>
+<td align="right">4.357119</td>
+<td align="right">5.158707</td>
 </tr>
 <tr class="even">
 <td align="left">G14</td>
-<td align="right">4.820699</td>
-<td align="right">0.1284878</td>
-<td align="right">42.57709</td>
-<td align="right">4.561505</td>
-<td align="right">5.079894</td>
+<td align="right">4.775662</td>
+<td align="right">0.1989050</td>
+<td align="right">44.28463</td>
+<td align="right">4.374868</td>
+<td align="right">5.176456</td>
 </tr>
 <tr class="odd">
 <td align="left">G15</td>
-<td align="right">4.906773</td>
-<td align="right">0.1288035</td>
-<td align="right">42.58312</td>
-<td align="right">4.646943</td>
-<td align="right">5.166604</td>
+<td align="right">4.969112</td>
+<td align="right">0.1989050</td>
+<td align="right">44.28463</td>
+<td align="right">4.568318</td>
+<td align="right">5.369905</td>
 </tr>
 <tr class="even">
 <td align="left">G16</td>
-<td align="right">4.705367</td>
-<td align="right">0.1286877</td>
-<td align="right">42.58950</td>
-<td align="right">4.445772</td>
-<td align="right">4.964963</td>
+<td align="right">4.730131</td>
+<td align="right">0.1990122</td>
+<td align="right">44.32700</td>
+<td align="right">4.329132</td>
+<td align="right">5.131130</td>
 </tr>
 <tr class="odd">
 <td align="left">G17</td>
-<td align="right">4.564521</td>
-<td align="right">0.1282290</td>
-<td align="right">42.57519</td>
-<td align="right">4.305848</td>
-<td align="right">4.823194</td>
+<td align="right">4.602612</td>
+<td align="right">0.1989050</td>
+<td align="right">44.28463</td>
+<td align="right">4.201819</td>
+<td align="right">5.003406</td>
 </tr>
 <tr class="even">
 <td align="left">G18</td>
-<td align="right">4.354190</td>
-<td align="right">0.1283802</td>
-<td align="right">42.58577</td>
-<td align="right">4.095214</td>
-<td align="right">4.613166</td>
+<td align="right">4.361692</td>
+<td align="right">0.1990122</td>
+<td align="right">44.32700</td>
+<td align="right">3.960693</td>
+<td align="right">4.762692</td>
 </tr>
 <tr class="odd">
 <td align="left">G19</td>
-<td align="right">4.912830</td>
-<td align="right">0.1298183</td>
-<td align="right">42.62142</td>
-<td align="right">4.650959</td>
-<td align="right">5.174701</td>
+<td align="right">4.840328</td>
+<td align="right">0.1989050</td>
+<td align="right">44.28463</td>
+<td align="right">4.439534</td>
+<td align="right">5.241122</td>
 </tr>
 <tr class="even">
 <td align="left">G20</td>
-<td align="right">4.030450</td>
-<td align="right">0.1289288</td>
-<td align="right">42.58961</td>
-<td align="right">3.770368</td>
-<td align="right">4.290533</td>
+<td align="right">4.039985</td>
+<td align="right">0.1989050</td>
+<td align="right">44.28463</td>
+<td align="right">3.639191</td>
+<td align="right">4.440779</td>
 </tr>
 <tr class="odd">
 <td align="left">G21</td>
-<td align="right">4.751738</td>
-<td align="right">0.1284928</td>
-<td align="right">42.57747</td>
-<td align="right">4.492533</td>
-<td align="right">5.010943</td>
+<td align="right">4.795007</td>
+<td align="right">0.1989050</td>
+<td align="right">44.28463</td>
+<td align="right">4.394214</td>
+<td align="right">5.195801</td>
 </tr>
 <tr class="even">
 <td align="left">G22</td>
-<td align="right">4.568926</td>
-<td align="right">0.1305487</td>
-<td align="right">42.66215</td>
-<td align="right">4.305589</td>
-<td align="right">4.832263</td>
+<td align="right">4.527545</td>
+<td align="right">0.1989050</td>
+<td align="right">44.28463</td>
+<td align="right">4.126751</td>
+<td align="right">4.928339</td>
 </tr>
 <tr class="odd">
 <td align="left">G23</td>
-<td align="right">4.250782</td>
-<td align="right">0.1285805</td>
-<td align="right">42.58354</td>
-<td align="right">3.991401</td>
-<td align="right">4.510162</td>
+<td align="right">4.252449</td>
+<td align="right">0.1989050</td>
+<td align="right">44.28463</td>
+<td align="right">3.851655</td>
+<td align="right">4.653243</td>
 </tr>
 <tr class="even">
 <td align="left">G24</td>
-<td align="right">3.827448</td>
-<td align="right">0.1534577</td>
-<td align="right">40.48016</td>
-<td align="right">3.517413</td>
-<td align="right">4.137483</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="outliers" class="section level2">
-<h2 class="hasAnchor">
-<a href="#outliers" class="anchor"></a>Outliers</h2>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="kw">hr</span><span class="op">$</span><span class="kw">outliers</span><span class="op">$</span><span class="kw">random</span> <span class="op">%&gt;%</span> <span class="fu">kable</span>(caption = <span class="st">"Outliers for random model."</span>)
-</pre></div>
-<table class="table">
-<caption>Outliers for random model.</caption>
-<colgroup>
-<col width="3%">
-<col width="4%">
-<col width="6%">
-<col width="4%">
-<col width="7%">
-<col width="10%">
-<col width="9%">
-<col width="12%">
-<col width="15%">
-<col width="14%">
-<col width="6%">
-<col width="9%">
-</colgroup>
-<thead><tr class="header">
-<th align="left"></th>
-<th align="left">rep</th>
-<th align="left">block</th>
-<th align="left">gen</th>
-<th align="right">yield</th>
-<th align="right">resi</th>
-<th align="right">res_MAD</th>
-<th align="right">rawp.BHStud</th>
-<th align="right">adjp</th>
-<th align="right">bholm</th>
-<th align="right">index</th>
-<th align="left">out_flag</th>
-</tr></thead>
-<tbody><tr class="odd">
-<td align="left">3</td>
-<td align="left">R1</td>
-<td align="left">B1</td>
-<td align="left">G05</td>
-<td align="right">5.8757</td>
-<td align="right">0.7593638</td>
-<td align="right">4.833477</td>
-<td align="right">0.0000013</td>
-<td align="right">0.000001341688</td>
-<td align="right">0.00009660155</td>
-<td align="right">3</td>
-<td align="left">OUTLIER</td>
-</tr></tbody>
-</table>
-<div class="sourceCode" id="cb8"><pre class="downlit">
-
-<span class="kw">hr</span><span class="op">$</span><span class="kw">outliers</span><span class="op">$</span><span class="kw">fixed</span> <span class="op">%&gt;%</span> <span class="fu">kable</span>(caption = <span class="st">"Outliers for fixed model."</span>)
-</pre></div>
-<table class="table">
-<caption>Outliers for fixed model.</caption>
-<colgroup>
-<col width="2%">
-<col width="3%">
-<col width="5%">
-<col width="3%">
-<col width="6%">
-<col width="9%">
-<col width="8%">
-<col width="11%">
-<col width="15%">
-<col width="13%">
-<col width="5%">
-<col width="8%">
-</colgroup>
-<thead><tr class="header">
-<th align="left"></th>
-<th align="left">rep</th>
-<th align="left">block</th>
-<th align="left">gen</th>
-<th align="right">yield</th>
-<th align="right">resi</th>
-<th align="right">res_MAD</th>
-<th align="right">rawp.BHStud</th>
-<th align="right">adjp</th>
-<th align="right">bholm</th>
-<th align="right">index</th>
-<th align="left">out_flag</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">3</td>
-<td align="left">R1</td>
-<td align="left">B1</td>
-<td align="left">G05</td>
-<td align="right">5.8757</td>
-<td align="right">0.7022176</td>
-<td align="right">4.929350</td>
-<td align="right">0.0000008</td>
-<td align="right">0.0000008250342</td>
-<td align="right">0.00005940247</td>
-<td align="right">3</td>
-<td align="left">OUTLIER</td>
-</tr>
-<tr class="even">
-<td align="left">16</td>
-<td align="left">R1</td>
-<td align="left">B4</td>
-<td align="left">G08</td>
-<td align="right">4.9989</td>
-<td align="right">0.5179535</td>
-<td align="right">3.635874</td>
-<td align="right">0.0002770</td>
-<td align="right">0.0002770401283</td>
-<td align="right">0.01939280898</td>
-<td align="right">16</td>
-<td align="left">OUTLIER</td>
-</tr>
-<tr class="odd">
-<td align="left">23</td>
-<td align="left">R1</td>
-<td align="left">B6</td>
-<td align="left">G24</td>
-<td align="right">4.9577</td>
-<td align="right">0.5385472</td>
-<td align="right">3.780435</td>
-<td align="right">0.0001566</td>
-<td align="right">0.0001565546183</td>
-<td align="right">0.01111537790</td>
-<td align="right">23</td>
-<td align="left">OUTLIER</td>
+<td align="right">4.153874</td>
+<td align="right">0.1990122</td>
+<td align="right">44.32700</td>
+<td align="right">3.752875</td>
+<td align="right">4.554873</td>
 </tr>
 </tbody>
 </table>
