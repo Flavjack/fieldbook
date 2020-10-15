@@ -115,19 +115,21 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<!-- You can install the released version of inti from [CRAN](https://CRAN.R-project.org) with: -->
+<!-- To install the stable version from [CRAN](https://CRAN.R-project.org), run the following from an R console: -->
 <!-- ``` r -->
 <!-- install.packages("inti") -->
 <!-- ``` -->
-<p>The development version from <a href="https://github.com/Flavjack/inti">GitHub</a> with:</p>
+<p>To install the latest development version directly from <a href="https://github.com/Flavjack/inti">GitHub</a>, run the following from an R console:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="co"># install.packages("devtools")</span>
-<span class="kw">devtools</span>::<span class="fu">install_github</span>(<span class="st">"Flavjack/inti"</span>)
+<span class="co">if</span> (<span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="st"><a href="https://remotes.r-lib.org">"remotes"</a></span>))
+  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"remotes"</span>)
+<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"rstudio/shiny"</span>)
 </pre></div>
 </div>
 <div id="shiny-apps" class="section level2">
 <h2 class="hasAnchor">
 <a href="#shiny-apps" class="anchor"></a>Shiny apps</h2>
+<p>If is the first time running any of the apps consider install the app dependencies (e. g. <code><a href="reference/yupana.html">inti::yupana(dependencies = TRUE)</a></code>)</p>
 <div id="yupana" class="section level3">
 <h3 class="hasAnchor">
 <a href="#yupana" class="anchor"></a>Yupana</h3>
