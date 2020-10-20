@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • inti</title>
+<title>Figure with caption and notes — include_fig • inti</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Figure with caption and notes — include_fig" />
+<meta property="og:description" content="Include figures with title and notes using a data base" />
 <meta property="og:image" content="https://flavjack.github.io/inti/reference/figures/logo.png" />
 
 
@@ -76,7 +77,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -149,198 +150,69 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Figure with caption and notes</h1>
+    <small class="dont-index">Source: <a href='https://github.com/flavjack/inti/blob/master/R/include_fig.R'><code>R/include_fig.R</code></a></small>
+    <div class="hidden name"><code>include_fig.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Include figures with title and notes using a data base</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>include_fig</span>(
+  data = <span class='kw'>NULL</span>,
+  <span class='kw'>figure</span>,
+  caption = <span class='kw'>NULL</span>,
+  notes = <span class='kw'>NULL</span>,
+  label = <span class='st'>"Source:"</span>,
+  table = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"figures"</span>, <span class='st'>"caption"</span>, <span class='st'>"notes"</span>, <span class='st'>"url"</span>)
+)</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="H2cal.html">H2cal()</a></code> </p>
-        </td>
-        <td><p>Heritability in plant breeding</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="create_rticles.html">create_rticles()</a></code> </p>
-        </td>
-        <td><p>Rticles template</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fieldbook_design.html">fieldbook_design()</a></code> </p>
-        </td>
-        <td><p>Field book experimental designs</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fieldbook_mvr.html">fieldbook_mvr()</a></code> </p>
-        </td>
-        <td><p>Multivariate Analysis</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fieldbook_plex.html">fieldbook_plex()</a></code> </p>
-        </td>
-        <td><p>Fieldbook plan information</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fieldbook_report.html">fieldbook_report()</a></code> </p>
-        </td>
-        <td><p>Fieldbook report</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fieldbook_reshape.html">fieldbook_reshape()</a></code> </p>
-        </td>
-        <td><p>Fieldbook reshape</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fieldbook_summary.html">fieldbook_summary()</a></code> </p>
-        </td>
-        <td><p>Fieldbook summary</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fieldbook_varlist.html">fieldbook_varlist()</a></code> </p>
-        </td>
-        <td><p>Fieldbook variable list</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="footnotes.html">footnotes()</a></code> </p>
-        </td>
-        <td><p>Table footnote</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="include_fig.html">include_fig()</a></code> </p>
-        </td>
-        <td><p>Figure with caption and notes</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="include_figure.html">include_figure()</a></code> </p>
-        </td>
-        <td><p>Figure with caption and notes</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="include_table.html">include_table()</a></code> </p>
-        </td>
-        <td><p>Table with footnotes</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="info_figure.html">info_figure()</a></code> </p>
-        </td>
-        <td><p>Figure information</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="info_table.html">info_table()</a></code> </p>
-        </td>
-        <td><p>Table information</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="jc_tombola.html">jc_tombola()</a></code> </p>
-        </td>
-        <td><p>Journal Club Tombola</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mean_comparison.html">mean_comparison()</a></code> </p>
-        </td>
-        <td><p>Mean comparison using data frames</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="means_lm.html">means_lm()</a></code> </p>
-        </td>
-        <td><p>Mean comparison</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="metamorphosis.html">metamorphosis()</a></code> </p>
-        </td>
-        <td><p>Transform data frame based in a dictionary</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="outliers_remove.html">outliers_remove()</a></code> </p>
-        </td>
-        <td><p>Remove outliers</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_design.html">plot_design()</a></code> </p>
-        </td>
-        <td><p>Fieldbook plot experimental designs</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_diag.html">plot_diag()</a></code> </p>
-        </td>
-        <td><p>Diagnostic plots</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_smr.html">plot_smr()</a></code> </p>
-        </td>
-        <td><p>Plot summary data</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rticles.html">rticles()</a></code> </p>
-        </td>
-        <td><p>Build markdown o bookdown template</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tarpuy.html">tarpuy()</a></code> </p>
-        </td>
-        <td><p>Fieldbook experimental designs</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="web_table.html">web_table()</a></code> </p>
-        </td>
-        <td><p>HTML tables for markdown documents</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="yupana.html">yupana()</a></code> </p>
-        </td>
-        <td><p>Interactive data analysis</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>data</th>
+      <td><p>Data frame with the figures information. See details.</p></td>
+    </tr>
+    <tr>
+      <th>figure</th>
+      <td><p>Name or path of the figure.</p></td>
+    </tr>
+    <tr>
+      <th>caption</th>
+      <td><p>Manual figure caption (default = NULL).</p></td>
+    </tr>
+    <tr>
+      <th>notes</th>
+      <td><p>Manual figure notes (default = NULL).</p></td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td><p>Label for start the footnote (default = "Source:").</p></td>
+    </tr>
+    <tr>
+      <th>table</th>
+      <td><p>Columns in the table (default = c("figures", "caption", "notes",
+"url")).</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Figure with caption and notes</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The data frame should contain 4 columns specified in <code>table</code>:</p>
+<p>1. <code>figures</code>.</p>
+<p>2. <code>caption</code>.</p>
+<p>3. <code>notes</code>.</p>
+<p>4. <code>url</code> or <code>url</code>.</p>
+<p>If you don't use a a data frame you provide the information manually.</p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
