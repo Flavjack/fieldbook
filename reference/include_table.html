@@ -162,9 +162,9 @@
     </div>
 
     <pre class="usage"><span class='fu'>include_table</span>(
-  <span class='kw'>data</span>,
-  caption = <span class='kw'>NULL</span>,
-  notes = <span class='kw'>NULL</span>,
+  data = <span class='kw'>NULL</span>,
+  caption = <span class='fl'>NA</span>,
+  notes = <span class='fl'>NA</span>,
   label = <span class='st'>"Note:"</span>,
   notation = <span class='st'>"alphabet"</span>
 )</pre>
@@ -222,9 +222,7 @@ symbol using <code>{hypen}</code> in your table. <code>notation</code> could be 
 <span class='kw'>table</span> <span class='op'>&lt;-</span> <span class='kw'>gs</span> <span class='op'>%&gt;%</span>
     <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"tab1"</span>)
 
-<span class='kw'>table</span> <span class='op'>%&gt;%</span> <span class='kw'>inti</span>::<span class='fu'>include_table</span>(label = <span class='st'>"_Nota:_"</span>
-                              , notation = <span class='st'>"num"</span>
-)
+<span class='kw'>table</span> <span class='op'>%&gt;%</span> <span class='kw'>inti</span>::<span class='fu'>include_table</span>()
 
 }
 
