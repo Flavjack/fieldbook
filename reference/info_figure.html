@@ -161,7 +161,14 @@
     <p>Describe figures information for export or print</p>
     </div>
 
-    <pre class="usage"><span class='fu'>info_figure</span>(caption = <span class='fl'>NA</span>, notes = <span class='fl'>NA</span>, url = <span class='fl'>NA</span>, path = <span class='fl'>NA</span>, nrows = <span class='fl'>50</span>)</pre>
+    <pre class="usage"><span class='fu'>info_figure</span>(
+  caption = <span class='fl'>NA</span>,
+  notes = <span class='fl'>NA</span>,
+  url = <span class='fl'>NA</span>,
+  path = <span class='fl'>NA</span>,
+  label = <span class='st'>"Note:"</span>,
+  nrows = <span class='fl'>50</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -181,6 +188,10 @@
     <tr>
       <th>path</th>
       <td><p>Figure local path.</p></td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td><p>Label for notes (default = "Note:")</p></td>
     </tr>
     <tr>
       <th>nrows</th>

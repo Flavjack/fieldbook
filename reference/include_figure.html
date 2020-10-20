@@ -161,14 +161,7 @@
     <p>Include figures with title and notes using a data base</p>
     </div>
 
-    <pre class="usage"><span class='fu'>include_figure</span>(
-  data = <span class='kw'>NULL</span>,
-  <span class='kw'>figure</span>,
-  caption = <span class='kw'>NULL</span>,
-  notes = <span class='kw'>NULL</span>,
-  label = <span class='st'>"Note:"</span>,
-  table = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"figures"</span>, <span class='st'>"descripton"</span>)
-)</pre>
+    <pre class="usage"><span class='fu'>include_figure</span>(data = <span class='kw'>NULL</span>, <span class='kw'>figure</span>, caption = <span class='fl'>NA</span>, notes = <span class='fl'>NA</span>, label = <span class='st'>"Note:"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -183,19 +176,15 @@
     </tr>
     <tr>
       <th>caption</th>
-      <td><p>Manual figure caption (default = NULL).</p></td>
+      <td><p>Manual figure caption (default = NA).</p></td>
     </tr>
     <tr>
       <th>notes</th>
-      <td><p>Manual figure notes (default = NULL).</p></td>
+      <td><p>Manual figure notes (default = NA).</p></td>
     </tr>
     <tr>
       <th>label</th>
-      <td><p>Label for start the footnote (default = "Source:").</p></td>
-    </tr>
-    <tr>
-      <th>table</th>
-      <td><p>Columns in the table (default = c("figure", "description")).</p></td>
+      <td><p>Label for start the footnote (default = "Note:").</p></td>
     </tr>
     </table>
 
@@ -216,20 +205,17 @@
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span>)
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://flavjack.github.io/inti'>inti</a></span>)
 
-<span class='co'>if</span> (<span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/gs4_has_token.html'>gs4_has_token</a></span>()) {
+<span class='kw'>finfo</span> <span class='op'>&lt;-</span> <span class='fu'><a href='info_figure.html'>info_figure</a></span>(caption = <span class='st'>"test"</span>
+                   , notes = <span class='st'>"nota"</span>
+                   , url = <span class='st'>"https://devblackops.io/images/testing.jpg"</span>
+                   , path = <span class='st'>"test.jpg"</span>
+                   )
 
-<span class='kw'>url</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
-              , <span class='st'>"1dfgpmCKdPmxRHozrZp0iE_xMGsvKTIcztDpMWYSEGaY"</span>)
-
-<span class='kw'>gs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span>(<span class='kw'>url</span>)
-
-<span class='kw'>data</span> <span class='op'>&lt;-</span> <span class='kw'>gs</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"fig1"</span>)
-
-<span class='kw'>fig</span> <span class='op'>&lt;-</span> <span class='fu'>include_figure</span>(<span class='kw'>data</span>)
+<span class='kw'>fig</span> <span class='op'>&lt;-</span> <span class='kw'>finfo</span> <span class='op'>%&gt;%</span>  <span class='fu'>include_figure</span>()
 <span class='kw'>fig</span>
-
-}
+</div><div class='output co'>#&gt; [1] "https://devblackops.io/images/testing.jpg"
+#&gt; attr(,"class")
+#&gt; [1] "knit_image_paths" "knit_asis"       </div><div class='input'>
 
 </div></pre>
   </div>
