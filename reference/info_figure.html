@@ -166,7 +166,7 @@
   notes = <span class='fl'>NA</span>,
   url = <span class='fl'>NA</span>,
   path = <span class='fl'>NA</span>,
-  label = <span class='st'>"Note:"</span>,
+  label = <span class='fl'>NA</span>,
   nrows = <span class='fl'>50</span>
 )</pre>
 
@@ -191,7 +191,7 @@
     </tr>
     <tr>
       <th>label</th>
-      <td><p>Label for notes (default = "Note:")</p></td>
+      <td><p>Label for notes (default = NA)</p></td>
     </tr>
     <tr>
       <th>nrows</th>
@@ -206,11 +206,11 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='kw'>finfo</span> <span class='op'>&lt;-</span> <span class='fu'>info_figure</span>(
-  caption = <span class='st'>"Figure caption"</span>
+  caption = <span class='st'>"Figure caption."</span>
+  , notes = <span class='st'>"Test note"</span>
   , url = <span class='st'>"www.image.dir"</span>
-  , nrows = <span class='fl'>30</span>
+  , label = <span class='st'>"Source:"</span>
   )
-
 
 </div></pre>
   </div>
