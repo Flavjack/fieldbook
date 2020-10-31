@@ -217,21 +217,21 @@ treatment1 and treatment2: <code>treatment1:treatment2</code>.</p>
 <span class='co'>if</span> (<span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/gs4_has_token.html'>gs4_has_token</a></span>()) {
 
 <span class='kw'>url</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
-              , <span class='st'>"15uwCgQRtR01B3FJaZBE8t_0bOC_8Bbey9ccwVlZH0jg/edit#gid=56711214"</span>)
+              , <span class='st'>"15uwCgQRtR01B3FJaZBE8t_0bOC_8Bbey9ccwVlZH0jg"</span>)
 <span class='co'># browseURL(url)</span>
 <span class='kw'>gs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span>(<span class='kw'>url</span>)
 
 (<span class='kw'>data</span> <span class='op'>&lt;-</span> <span class='kw'>gs</span> <span class='op'>%&gt;%</span>
     <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"fb"</span>))
 
-<span class='kw'>smrfb</span> <span class='op'>&lt;-</span> <span class='fu'>fieldbook_summary</span>(<span class='kw'>data</span>
+<span class='kw'>fbsm</span> <span class='op'>&lt;-</span> <span class='fu'>fieldbook_summary</span>(<span class='kw'>data</span>
                  , last_factor = <span class='st'>"dosis"</span>
                  , model_facts = <span class='st'>"bloque + cultivar*fuenteN*dosis"</span>
                  , comp_facts = <span class='st'>"cultivar:fuenteN:dosis"</span>
                  )
-<span class='kw'>smrfb</span>
+<span class='kw'>fbsm</span>
 
-<span class='kw'>smrfb</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/sheet_write.html'>write_sheet</a></span>(ss = <span class='kw'>gs</span>, sheet = <span class='st'>"fbsmr"</span>)
+<span class='co'># fbsm %&gt;% write_sheet(ss = gs, sheet = "fbsm")</span>
 
 }
 
