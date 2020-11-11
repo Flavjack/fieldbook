@@ -161,17 +161,17 @@
     <p>Function for arrange journal club schedule</p>
     </div>
 
-    <pre class="usage"><span class='fu'>jc_tombola</span>(
-  <span class='kw'>data</span>,
-  <span class='kw'>members</span>,
-  <span class='kw'>group</span>,
-  <span class='kw'>gr_lvl</span>,
-  <span class='kw'>status</span>,
-  <span class='kw'>st_lvl</span>,
-  <span class='kw'>frq</span>,
-  <span class='kw'>date</span>,
-  seed = <span class='kw'>NULL</span>
-)</pre>
+    <pre class="usage"><span class='fu'>jc_tombola</span><span class='op'>(</span>
+  <span class='va'>data</span>,
+  <span class='va'>members</span>,
+  <span class='va'>group</span>,
+  <span class='va'>gr_lvl</span>,
+  <span class='va'>status</span>,
+  <span class='va'>st_lvl</span>,
+  <span class='va'>frq</span>,
+  <span class='va'>date</span>,
+  seed <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -227,33 +227,33 @@ are: active or spectator. Only the active members will enter in the schedule.</p
     <pre class="examples"><div class='input'>
 <span class='co'># \dontshow{</span>
 
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://flavjack.github.io/inti'>inti</a></span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span>)
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://flavjack.github.io/inti/'>inti</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span><span class='op'>)</span>
 
-<span class='co'>if</span> (<span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/gs4_has_token.html'>gs4_has_token</a></span>()) {
+<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/gs4_has_token.html'>gs4_has_token</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
 
-<span class='kw'>url</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
-, <span class='st'>"15TaF0lCCByg0dgOLqfoTlLbAWnau8IiLOklpS4cvm4M"</span>)
+<span class='va'>url</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
+, <span class='st'>"15TaF0lCCByg0dgOLqfoTlLbAWnau8IiLOklpS4cvm4M"</span><span class='op'>)</span>
 
-<span class='kw'>gs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span>(<span class='kw'>url</span>)
+<span class='va'>gs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span><span class='op'>(</span><span class='va'>url</span><span class='op'>)</span>
 <span class='co'># browseURL(url)</span>
 
-<span class='kw'>jc</span> <span class='op'>&lt;-</span>  <span class='kw'>gs</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"members"</span>)
+<span class='va'>jc</span> <span class='op'>&lt;-</span>  <span class='va'>gs</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span><span class='op'>(</span><span class='st'>"members"</span><span class='op'>)</span>
 
-<span class='kw'>jc</span> <span class='op'>%&gt;%</span> <span class='fu'>jc_tombola</span>(data = <span class='kw'>.</span>
-                  , members = <span class='st'>"Member"</span>
-                  , group = <span class='st'>"Language"</span>
-                  , gr_lvl = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"english"</span>, <span class='st'>"spanish"</span>)
-                  , status = <span class='st'>"Status"</span>
-                  , st_lvl = <span class='st'>"activo"</span>
-                  , frq = <span class='fl'>7</span>
-                  , date = <span class='st'>"2020-06-17"</span>
-                  , seed = <span class='fl'>2013</span>
-                  ) <span class='op'>%&gt;%</span>
-                  <span class='fu'><a href='web_table.html'>web_table</a></span>(rnames = <span class='fl'>TRUE</span>
-                  , caption = <span class='st'>"JC"</span>)
+<span class='va'>jc</span> <span class='op'>%&gt;%</span> <span class='fu'>jc_tombola</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>.</span>
+                  , members <span class='op'>=</span> <span class='st'>"Member"</span>
+                  , group <span class='op'>=</span> <span class='st'>"Language"</span>
+                  , gr_lvl <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"english"</span>, <span class='st'>"spanish"</span><span class='op'>)</span>
+                  , status <span class='op'>=</span> <span class='st'>"Status"</span>
+                  , st_lvl <span class='op'>=</span> <span class='st'>"activo"</span>
+                  , frq <span class='op'>=</span> <span class='fl'>7</span>
+                  , date <span class='op'>=</span> <span class='st'>"2020-06-17"</span>
+                  , seed <span class='op'>=</span> <span class='fl'>2013</span>
+                  <span class='op'>)</span> <span class='op'>%&gt;%</span>
+                  <span class='fu'><a href='web_table.html'>web_table</a></span><span class='op'>(</span>rnames <span class='op'>=</span> <span class='cn'>TRUE</span>
+                  , caption <span class='op'>=</span> <span class='st'>"JC"</span><span class='op'>)</span>
 
-}
+<span class='op'>}</span>
 
 <span class='co'># }</span>
 

@@ -161,15 +161,15 @@
     <p>Function to reshape fieldbook according a separation character</p>
     </div>
 
-    <pre class="usage"><span class='fu'>fieldbook_reshape</span>(
-  <span class='kw'>data</span>,
-  <span class='kw'>last_factor</span>,
-  <span class='kw'>sep</span>,
-  <span class='kw'>new_colname</span>,
-  from_var = <span class='kw'>NULL</span>,
-  to_var = <span class='kw'>NULL</span>,
-  exc_factors = <span class='kw'>NULL</span>
-)</pre>
+    <pre class="usage"><span class='fu'>fieldbook_reshape</span><span class='op'>(</span>
+  <span class='va'>data</span>,
+  <span class='va'>last_factor</span>,
+  <span class='va'>sep</span>,
+  <span class='va'>new_colname</span>,
+  from_var <span class='op'>=</span> <span class='cn'>NULL</span>,
+  to_var <span class='op'>=</span> <span class='cn'>NULL</span>,
+  exc_factors <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -218,30 +218,30 @@ will help to create the column <code>rep</code> and the new variable name will b
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://flavjack.github.io/inti'>inti</a></span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span>)
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://flavjack.github.io/inti/'>inti</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span><span class='op'>)</span>
 
-<span class='co'>if</span> (<span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/gs4_has_token.html'>gs4_has_token</a></span>()) {
+<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/gs4_has_token.html'>gs4_has_token</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
 
-<span class='kw'>url</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
-              , <span class='st'>"1lslvNuebfI0YQw3KMz7clN8nIs3x8G9Da63E1em7J5o/"</span>)
+<span class='va'>url</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
+              , <span class='st'>"1lslvNuebfI0YQw3KMz7clN8nIs3x8G9Da63E1em7J5o/"</span><span class='op'>)</span>
 <span class='co'># browseURL(url)</span>
-<span class='kw'>gs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span>(<span class='kw'>url</span>)
+<span class='va'>gs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span><span class='op'>(</span><span class='va'>url</span><span class='op'>)</span>
 
-(<span class='kw'>data</span> <span class='op'>&lt;-</span> <span class='kw'>gs</span> <span class='op'>%&gt;%</span>
-    <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"fb"</span>))
+<span class='op'>(</span><span class='va'>data</span> <span class='op'>&lt;-</span> <span class='va'>gs</span> <span class='op'>%&gt;%</span>
+    <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span><span class='op'>(</span><span class='st'>"fb"</span><span class='op'>)</span><span class='op'>)</span>
 
-<span class='kw'>fbrs</span> <span class='op'>&lt;-</span> <span class='fu'>fieldbook_reshape</span>(data = <span class='kw'>data</span>
-                          , last_factor = <span class='st'>"imbt"</span>
-                          , sep = <span class='st'>"_"</span>
-                          , new_colname = <span class='st'>"rep"</span>
-                          , from_var = <span class='st'>"sch_0_1"</span>
-                          , to_var = <span class='st'>"swc_0_1"</span>
-                          , exc_factors = <span class='st'>"bar_code"</span>
-                          )
-<span class='kw'>fbrs</span>
+<span class='va'>fbrs</span> <span class='op'>&lt;-</span> <span class='fu'>fieldbook_reshape</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>data</span>
+                          , last_factor <span class='op'>=</span> <span class='st'>"imbt"</span>
+                          , sep <span class='op'>=</span> <span class='st'>"_"</span>
+                          , new_colname <span class='op'>=</span> <span class='st'>"rep"</span>
+                          , from_var <span class='op'>=</span> <span class='st'>"sch_0_1"</span>
+                          , to_var <span class='op'>=</span> <span class='st'>"swc_0_1"</span>
+                          , exc_factors <span class='op'>=</span> <span class='st'>"bar_code"</span>
+                          <span class='op'>)</span>
+<span class='va'>fbrs</span>
 
-}
+<span class='op'>}</span>
 
 </div></pre>
   </div>

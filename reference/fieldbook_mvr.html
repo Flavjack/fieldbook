@@ -161,7 +161,7 @@
     <p>Multivariate analysis for PCA and HCPC</p>
     </div>
 
-    <pre class="usage"><span class='fu'>fieldbook_mvr</span>(<span class='kw'>data</span>, <span class='kw'>fb_smr</span>, <span class='kw'>summary_by</span>, <span class='kw'>groups</span>)</pre>
+    <pre class="usage"><span class='fu'>fieldbook_mvr</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>fb_smr</span>, <span class='va'>summary_by</span>, <span class='va'>groups</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -194,36 +194,39 @@ correlation).</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://flavjack.github.io/inti'>inti</a></span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='http://factominer.free.fr'>FactoMineR</a></span>)
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://flavjack.github.io/inti/'>inti</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/tidyverse/googlesheets4'>googlesheets4</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://factominer.free.fr'>FactoMineR</a></span><span class='op'>)</span>
 
-<span class='co'>if</span> (<span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/gs4_has_token.html'>gs4_has_token</a></span>()) {
+<span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/gs4_has_token.html'>gs4_has_token</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
 
-<span class='kw'>url</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
-              , <span class='st'>"15r7ZwcZZHbEgltlF6gSFvCTFA-CFzVBWwg3mFlRyKPs"</span>)
+<span class='va'>url</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"https://docs.google.com/spreadsheets/d/"</span>
+              , <span class='st'>"15r7ZwcZZHbEgltlF6gSFvCTFA-CFzVBWwg3mFlRyKPs"</span><span class='op'>)</span>
 <span class='co'># browseURL(url)</span>
-<span class='kw'>gs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span>(<span class='kw'>url</span>)
+<span class='va'>gs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/as_sheets_id.html'>as_sheets_id</a></span><span class='op'>(</span><span class='va'>url</span><span class='op'>)</span>
 
-(<span class='kw'>data</span> <span class='op'>&lt;-</span> <span class='kw'>gs</span> <span class='op'>%&gt;%</span>
-    <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"fb"</span>))
+<span class='op'>(</span><span class='va'>data</span> <span class='op'>&lt;-</span> <span class='va'>gs</span> <span class='op'>%&gt;%</span>
+    <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span><span class='op'>(</span><span class='st'>"fb"</span><span class='op'>)</span><span class='op'>)</span>
 
-(<span class='kw'>fb_smr</span> <span class='op'>&lt;-</span> <span class='kw'>gs</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span>(<span class='st'>"fbsm"</span>))
+<span class='op'>(</span><span class='va'>fb_smr</span> <span class='op'>&lt;-</span> <span class='va'>gs</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/googlesheets4/man/range_read.html'>range_read</a></span><span class='op'>(</span><span class='st'>"fbsm"</span><span class='op'>)</span><span class='op'>)</span>
 
 
-<span class='kw'>mvr</span> <span class='op'>&lt;-</span> <span class='fu'>fieldbook_mvr</span>(<span class='kw'>data</span>, <span class='kw'>fb_smr</span>
-, summary_by = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"genotype"</span>, <span class='st'>"treat"</span>), groups = <span class='st'>"treat"</span>)
+<span class='va'>mvr</span> <span class='op'>&lt;-</span> <span class='fu'>fieldbook_mvr</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>fb_smr</span>
+, summary_by <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"genotype"</span>, <span class='st'>"treat"</span><span class='op'>)</span>, groups <span class='op'>=</span> <span class='st'>"treat"</span><span class='op'>)</span>
 
-<span class='kw'>FactoMineR</span>::<span class='fu'><a href='https://rdrr.io/pkg/FactoMineR/man/plot.PCA.html'>plot.PCA</a></span>(<span class='kw'>mvr</span><span class='op'>$</span><span class='kw'>pca</span>
-                     , choix = <span class='st'>"ind"</span>
-                     , habillage = <span class='kw'>mvr</span><span class='op'>$</span><span class='kw'>param</span><span class='op'>$</span><span class='kw'>groups_n</span>
-                     , invisible = <span class='st'>"quali"</span>
-)
+<span class='fu'>FactoMineR</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/FactoMineR/man/plot.PCA.html'>plot.PCA</a></span><span class='op'>(</span><span class='va'>mvr</span><span class='op'>$</span><span class='va'>pca</span>
+                     , choix <span class='op'>=</span> <span class='st'>"ind"</span>
+                     , habillage <span class='op'>=</span> <span class='va'>mvr</span><span class='op'>$</span><span class='va'>param</span><span class='op'>$</span><span class='va'>groups_n</span>
+                     , invisible <span class='op'>=</span> <span class='st'>"quali"</span>
+                     <span class='op'>)</span>
 
-<span class='kw'>FactoMineR</span>::<span class='fu'><a href='https://rdrr.io/pkg/FactoMineR/man/plot.HCPC.html'>plot.HCPC</a></span>(<span class='kw'>mvr</span><span class='op'>$</span><span class='kw'>hcpc</span>)
+<span class='fu'>FactoMineR</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/FactoMineR/man/plot.HCPC.html'>plot.HCPC</a></span><span class='op'>(</span><span class='va'>mvr</span><span class='op'>$</span><span class='va'>hcpc</span>
+                      , choice <span class='op'>=</span> <span class='st'>"map"</span>
+                      , draw.tree <span class='op'>=</span> <span class='cn'>F</span>
+                      <span class='op'>)</span>
 
-}
+<span class='op'>}</span>
 
 </div></pre>
   </div>

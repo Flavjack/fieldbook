@@ -122,8 +122,8 @@
 <div id="broad-sense-heritability-h2" class="section level1">
 <h1 class="hasAnchor">
 <a href="#broad-sense-heritability-h2" class="anchor"></a>Broad-sense heritability (<span class="math inline">\(H^2\)</span>)</h1>
-<p>Broad-sense heritability (<span class="math inline">\(H^2\)</span>) is defined as the proportion of phenotypic variance that is attributable to an overall genetic variance for the genotype <span class="citation">(Schmidt et al., <a href="#ref-schmidt2019Estimating" role="doc-biblioref">2019</a><a href="#ref-schmidt2019Estimating" role="doc-biblioref">b</a>)</span>. There are usually additional interpretations associated with <span class="math inline">\(H^2\)</span>: <em>(i)</em> It is equivalent to the coefficient of determination of a linear regression of the unobservable genotypic value on the observed phenotype; <em>(ii)</em> It is also the squared correlation between predicted phenotypic value and genotypic value; and <em>(iii)</em> It represents the proportion of the selection differential (<span class="math inline">\(S\)</span>) that can be realized as the response to selection (<span class="math inline">\(R\)</span>) <span class="citation">(Falconer and Mackay, <a href="#ref-falconer2005Introduction" role="doc-biblioref">2005</a>)</span>.</p>
-<p>There are two main reasons why heritability on an entry-mean basis is of interest in plant breeding <span class="citation">(Schmidt et al., <a href="#ref-schmidt2019Heritability" role="doc-biblioref">2019</a><a href="#ref-schmidt2019Heritability" role="doc-biblioref">a</a>)</span>:</p>
+<p>Broad-sense heritability (<span class="math inline">\(H^2\)</span>) is defined as the proportion of phenotypic variance that is attributable to an overall genetic variance for the genotype <span class="citation">(<span class="citeproc-not-found" data-reference-id="schmidt2019Estimating"><strong>???</strong></span>)</span>. There are usually additional interpretations associated with <span class="math inline">\(H^2\)</span>: <em>(i)</em> It is equivalent to the coefficient of determination of a linear regression of the unobservable genotypic value on the observed phenotype; <em>(ii)</em> It is also the squared correlation between predicted phenotypic value and genotypic value; and <em>(iii)</em> It represents the proportion of the selection differential (<span class="math inline">\(S\)</span>) that can be realized as the response to selection (<span class="math inline">\(R\)</span>) <span class="citation">(Falconer and Mackay, <a href="#ref-falconer2005Introduction" role="doc-biblioref">2005</a>)</span>.</p>
+<p>There are two main reasons why heritability on an entry-mean basis is of interest in plant breeding <span class="citation">(<span class="citeproc-not-found" data-reference-id="schmidt2019Heritability"><strong>???</strong></span>)</span>:</p>
 <ol style="list-style-type: decimal">
 <li>It is plugged into the breeder’s Equation to predict the response to selection.</li>
 <li>It is a descriptive measure used to assess the usefulness and precision of results from cultivar evaluation trials.</li>
@@ -143,12 +143,12 @@
 <div id="usual-problems" class="section level1">
 <h1 class="hasAnchor">
 <a href="#usual-problems" class="anchor"></a>Usual Problems</h1>
-<p>In practice, most trials are conducted in a multienvironment trial (MET) presente unbalanced data as not all cultivars are tested at each environment or simply when plot data is lost or when the number of replicates at each location varies between genotypes <span class="citation">(Schmidt et al., <a href="#ref-schmidt2019Estimating" role="doc-biblioref">2019</a><a href="#ref-schmidt2019Estimating" role="doc-biblioref">b</a>)</span>. However, the standard method for estimating heritability implicitly assumes balanced data, independent genotype effects, and homogeneous variances.</p>
+<p>In practice, most trials are conducted in a multienvironment trial (MET) presente unbalanced data as not all cultivars are tested at each environment or simply when plot data is lost or when the number of replicates at each location varies between genotypes <span class="citation">(<span class="citeproc-not-found" data-reference-id="schmidt2019Estimating"><strong>???</strong></span>)</span>. However, the standard method for estimating heritability implicitly assumes balanced data, independent genotype effects, and homogeneous variances.</p>
 </div>
 <div id="how-calculate-the-heritability" class="section level1">
 <h1 class="hasAnchor">
 <a href="#how-calculate-the-heritability" class="anchor"></a>How calculate the Heritability?</h1>
-<p>According <span class="citation">Schmidt et al. (<a href="#ref-schmidt2019Heritability" role="doc-biblioref">2019</a><a href="#ref-schmidt2019Heritability" role="doc-biblioref">a</a>)</span>, the variance components could be calculated in two ways:</p>
+<p>According <span class="citation">(<span class="citeproc-not-found" data-reference-id="schmidt2019Heritability"><strong>???</strong></span>)</span>, the variance components could be calculated in two ways:</p>
 <div id="two-stages-approach" class="section level2">
 <h2 class="hasAnchor">
 <a href="#two-stages-approach" class="anchor"></a>1) Two stages approach</h2>
@@ -201,40 +201,38 @@
 <div id="heritability-function-in-the-package" class="section level1">
 <h1 class="hasAnchor">
 <a href="#heritability-function-in-the-package" class="anchor"></a>Heritability function in the package</h1>
-<p>For calculate the standard heritability in MET experiments the number of location and replication should be include manually in the function <code><a href="../reference/H2cal.html">H2cal()</a></code>. In the case of difference number of replication in each experiments, take the maximum value (often done in practice) <span class="citation">(Schmidt et al., <a href="#ref-schmidt2019Estimating" role="doc-biblioref">2019</a><a href="#ref-schmidt2019Estimating" role="doc-biblioref">b</a>)</span>.</p>
-<p>For remove the outliers the function implemented is the Method 4 used for <span class="citation">Bernal-Vasquez et al. (<a href="#ref-bernal-vasquez2016Outliera" role="doc-biblioref">2016</a>)</span>: Bonferroni-Holm using re-scaled MAD for standardizing residuals (BH-MADR).</p>
+<p>For calculate the standard heritability in MET experiments the number of location and replication should be include manually in the function <code><a href="../reference/H2cal.html">H2cal()</a></code>. In the case of difference number of replication in each experiments, take the maximum value (often done in practice) <span class="citation">(<span class="citeproc-not-found" data-reference-id="schmidt2019Estimating"><strong>???</strong></span>)</span>.</p>
+<p>For remove the outliers the function implemented is the Method 4 used for <span class="citation">(<span class="citeproc-not-found" data-reference-id="bernal-vasquez2016Outliera"><strong>???</strong></span>)</span>: Bonferroni-Holm using re-scaled MAD for standardizing residuals (BH-MADR).</p>
 <div id="load-packages" class="section level2">
 <h2 class="hasAnchor">
 <a href="#load-packages" class="anchor"></a>Load packages</h2>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://flavjack.github.io/inti">inti</a></span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="http://kwstat.github.io/agridat">agridat</a></span>)
-</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://flavjack.github.io/inti/">inti</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://kwstat.github.io/agridat/">agridat</a></span><span class="op">)</span></code></pre></div>
 </div>
 <div id="h2cal-function" class="section level2">
 <h2 class="hasAnchor">
 <a href="#h2cal-function" class="anchor"></a>H2cal function</h2>
-<div class="sourceCode" id="cb2"><pre class="downlit">
- <span class="kw">dt</span> <span class="op">&lt;-</span> <span class="kw">john.alpha</span>
- <span class="kw">hr</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/H2cal.html">H2cal</a></span>(data = <span class="kw">dt</span>
-            , trait = <span class="st">"yield"</span>
-            , gen.name = <span class="st">"gen"</span>
-            , rep.n = <span class="fl">3</span>
-            , fix.model = <span class="st">"rep + (1|rep:block) + gen"</span>
-            , ran.model = <span class="st">"rep + (1|rep:block) + (1|gen)"</span>
-            , emmeans = <span class="fl">TRUE</span>
-            , plot_diag = <span class="fl">TRUE</span>
-            , plot_dots = <span class="st">"rep"</span>
-            , outliers.rm = <span class="fl">FALSE</span>
-            )
-</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"> <span class="va">dt</span> <span class="op">&lt;-</span> <span class="va">john.alpha</span>
+ <span class="va">hr</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/H2cal.html">H2cal</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">dt</span>
+            , trait <span class="op">=</span> <span class="st">"yield"</span>
+            , gen.name <span class="op">=</span> <span class="st">"gen"</span>
+            , rep.n <span class="op">=</span> <span class="fl">3</span>
+            , fix.model <span class="op">=</span> <span class="st">"rep + (1|rep:block) + gen"</span>
+            , ran.model <span class="op">=</span> <span class="st">"rep + (1|rep:block) + (1|gen)"</span>
+            , emmeans <span class="op">=</span> <span class="cn">TRUE</span>
+            , plot_diag <span class="op">=</span> <span class="cn">TRUE</span>
+            , plot_dots <span class="op">=</span> <span class="st">"rep"</span>
+            , outliers.rm <span class="op">=</span> <span class="cn">FALSE</span>
+            <span class="op">)</span></code></pre></div>
 <p><img src="heritability_files/figure-html/unnamed-chunk-2-1.png" width="98%" style="display: block; margin: auto;"></p>
 </div>
 <div id="model-information" class="section level2">
 <h2 class="hasAnchor">
 <a href="#model-information" class="anchor"></a>Model information</h2>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw">hr</span><span class="op">$</span><span class="kw">model</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>()
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">hr</span><span class="op">$</span><span class="va">model</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; Linear mixed model fit by REML ['lmerMod']</span>
 <span class="co">#&gt; Formula: yield ~ rep + (1 | rep:block) + (1 | gen)</span>
 <span class="co">#&gt;    Data: dt.rm</span>
@@ -262,15 +260,13 @@
 <span class="co">#&gt; Correlation of Fixed Effects:</span>
 <span class="co">#&gt;       (Intr) repR2 </span>
 <span class="co">#&gt; repR2 -0.599       </span>
-<span class="co">#&gt; repR3 -0.599  0.500</span>
-</pre></div>
+<span class="co">#&gt; repR3 -0.599  0.500</span></code></pre></div>
 </div>
 <div id="variance-component" class="section level2">
 <h2 class="hasAnchor">
 <a href="#variance-component" class="anchor"></a>Variance component</h2>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="kw">hr</span><span class="op">$</span><span class="kw">tabsmr</span> <span class="op">%&gt;%</span> <span class="fu">kable</span>(caption = <span class="st">"Variance component table"</span>)
-</pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">hr</span><span class="op">$</span><span class="va">tabsmr</span> <span class="op">%&gt;%</span> <span class="fu">kable</span><span class="op">(</span>caption <span class="op">=</span> <span class="st">"Variance component table"</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <caption>Variance component table</caption>
 <colgroup>
@@ -332,9 +328,8 @@
 <div id="best-linear-unbiased-predictors-blups" class="section level2">
 <h2 class="hasAnchor">
 <a href="#best-linear-unbiased-predictors-blups" class="anchor"></a>Best Linear Unbiased Predictors (BLUPs)</h2>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw">hr</span><span class="op">$</span><span class="kw">blups</span> <span class="op">%&gt;%</span> <span class="fu">kable</span>(caption = <span class="st">"BLUPs"</span>)
-</pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">hr</span><span class="op">$</span><span class="va">blups</span> <span class="op">%&gt;%</span> <span class="fu">kable</span><span class="op">(</span>caption <span class="op">=</span> <span class="st">"BLUPs"</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <caption>BLUPs</caption>
 <thead><tr class="header">
@@ -444,9 +439,8 @@
 <div id="best-linear-unbiased-estimators-blues" class="section level2">
 <h2 class="hasAnchor">
 <a href="#best-linear-unbiased-estimators-blues" class="anchor"></a>Best Linear Unbiased Estimators (BLUEs)</h2>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="kw">hr</span><span class="op">$</span><span class="kw">blues</span> <span class="op">%&gt;%</span> <span class="fu">kable</span>(caption = <span class="st">"BLUEs"</span>)
-</pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">hr</span><span class="op">$</span><span class="va">blues</span> <span class="op">%&gt;%</span> <span class="fu">kable</span><span class="op">(</span>caption <span class="op">=</span> <span class="st">"BLUEs"</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <caption>BLUEs</caption>
 <thead><tr class="header">
@@ -658,17 +652,8 @@
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
 <div id="refs">
-<div id="ref-bernal-vasquez2016Outliera">
-<p>Bernal-Vasquez, A.-M., H.-F. Utz, and H.-P. Piepho. 2016. Outlier detection methods for generalized lattices: A case study on the transition from ANOVA to REML. Theoretical and Applied Genetics 129(4): 787–804. doi: <a href="https://doi.org/10.1007/s00122-016-2666-6">10.1007/s00122-016-2666-6</a>.</p>
-</div>
 <div id="ref-falconer2005Introduction">
 <p>Falconer, D.S., and T.F. Mackay. 2005. Introduction to quantitative genetics (Pearson Prentice Hall, editor). Fourth.</p>
-</div>
-<div id="ref-schmidt2019Heritability">
-<p>Schmidt, P., J. Hartung, J. Bennewitz, and H.-P. Piepho. 2019a. Heritability in Plant Breeding on a Genotype-Difference Basis. Genetics 212(4): 991–1008. doi: <a href="https://doi.org/10.1534/genetics.119.302134">10.1534/genetics.119.302134</a>.</p>
-</div>
-<div id="ref-schmidt2019Estimating">
-<p>Schmidt, P., J. Hartung, J. Rath, and H.-P. Piepho. 2019b. Estimating Broad-Sense Heritability with Unbalanced Data from Agricultural Cultivar Trials. Crop Science 59(2): 525–536. doi: <a href="https://doi.org/10.2135/cropsci2018.06.0376">10.2135/cropsci2018.06.0376</a>.</p>
 </div>
 <div id="ref-zystro2018Alternative">
 <p>Zystro, J., M. Colley, and J. Dawson. 2018. Alternative Experimental Designs for Plant Breeding. Plant Breeding Reviews. John Wiley &amp; Sons, Ltd. pp. 87–117</p>
