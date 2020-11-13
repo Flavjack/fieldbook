@@ -44,6 +44,12 @@
 <script src="../pkgdown.js"></script>
 
 
+<!-- docsearch -->
+<script src="../docsearch.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
 
 
 <meta property="og:title" content="Function reference" />
@@ -103,24 +109,38 @@
   </a>
 </li>
 <li>
-  <a href="../articles/inti.html">
+  <a href="../articles/apps.html">
     <span class="fa fa-seedling"></span>
      
-    Get started
+    Apps
   </a>
 </li>
-<li>
-  <a href="../articles/heritability.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-book"></span>
      
     Articles
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/heritability.html">Broad-sense heritability in plant breeding</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../reference/index.html">
     <span class="fa fa-file-code"></span>
      
     Functions
+  </a>
+</li>
+<li>
+  <a href="../articles/policy.html">
+    <span class="fa fa-shield-alt"></span>
+     
+    Privacy Policy
   </a>
 </li>
 <li>
@@ -139,6 +159,12 @@
   </a>
 </li>
       </ul>
+      
+      <form class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+        </div>
+      </form>
       
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -165,8 +191,8 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
+          <h2 id="section-yupana" class="hasAnchor"><a href="#section-yupana" class="anchor"></a>Yupana</h2>
+          <p class="section-desc"><p>Data analysis</p></p>
         </th>
       </tr>
       
@@ -177,39 +203,9 @@
       <tr>
         
         <td>
-          <p><code><a href="H2cal.html">H2cal()</a></code> </p>
+          <p><code><a href="yupana.html">yupana()</a></code> </p>
         </td>
-        <td><p>Heritability in plant breeding</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="create_rticles.html">create_rticles()</a></code> </p>
-        </td>
-        <td><p>Rticles template</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fieldbook_design.html">fieldbook_design()</a></code> </p>
-        </td>
-        <td><p>Field book experimental designs</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fieldbook_mvr.html">fieldbook_mvr()</a></code> </p>
-        </td>
-        <td><p>Multivariate Analysis</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fieldbook_plex.html">fieldbook_plex()</a></code> </p>
-        </td>
-        <td><p>Fieldbook plan information</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fieldbook_report.html">fieldbook_report()</a></code> </p>
-        </td>
-        <td><p>Fieldbook report</p></td>
+        <td><p>Interactive data analysis</p></td>
       </tr><tr>
         
         <td>
@@ -225,15 +221,113 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="mean_comparison.html">mean_comparison()</a></code> </p>
+        </td>
+        <td><p>Mean comparison using data frames</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="fieldbook_report.html">fieldbook_report()</a></code> </p>
+        </td>
+        <td><p>Fieldbook report</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_diag.html">plot_diag()</a></code> </p>
+        </td>
+        <td><p>Diagnostic plots</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_smr.html">plot_smr()</a></code> </p>
+        </td>
+        <td><p>Plot summary data</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="fieldbook_mvr.html">fieldbook_mvr()</a></code> </p>
+        </td>
+        <td><p>Multivariate Analysis</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-tarpuy" class="hasAnchor"><a href="#section-tarpuy" class="anchor"></a>Tarpuy</h2>
+          <p class="section-desc"><p>Experimental designs</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="tarpuy.html">tarpuy()</a></code> </p>
+        </td>
+        <td><p>Fieldbook experimental designs</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="fieldbook_plex.html">fieldbook_plex()</a></code> </p>
+        </td>
+        <td><p>Fieldbook plan information</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="fieldbook_design.html">fieldbook_design()</a></code> </p>
+        </td>
+        <td><p>Field book experimental designs</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="fieldbook_varlist.html">fieldbook_varlist()</a></code> </p>
         </td>
         <td><p>Fieldbook variable list</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="footnotes.html">footnotes()</a></code> </p>
+          <p><code><a href="plot_design.html">plot_design()</a></code> </p>
         </td>
-        <td><p>Table footnote</p></td>
+        <td><p>Fieldbook plot experimental designs</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-rticles" class="hasAnchor"><a href="#section-rticles" class="anchor"></a>Rticles</h2>
+          <p class="section-desc"><p>Write technical docs</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="rticles.html">rticles()</a></code> </p>
+        </td>
+        <td><p>Build markdown o bookdown template</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="create_rticles.html">create_rticles()</a></code> </p>
+        </td>
+        <td><p>Rticles template</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="info_figure.html">info_figure()</a></code> </p>
+        </td>
+        <td><p>Figure information</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="info_table.html">info_table()</a></code> </p>
+        </td>
+        <td><p>Table information</p></td>
       </tr><tr>
         
         <td>
@@ -252,42 +346,25 @@
           <p><code><a href="include_table.html">include_table()</a></code> </p>
         </td>
         <td><p>Table with footnotes</p></td>
-      </tr><tr>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-extra" class="hasAnchor"><a href="#section-extra" class="anchor"></a>Extra</h2>
+          <p class="section-desc"><p>Multipurpose</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
         
         <td>
-          <p><code><a href="info_figure.html">info_figure()</a></code> </p>
+          <p><code><a href="H2cal.html">H2cal()</a></code> </p>
         </td>
-        <td><p>Figure information</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="info_table.html">info_table()</a></code> </p>
-        </td>
-        <td><p>Table information</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="jc_tombola.html">jc_tombola()</a></code> </p>
-        </td>
-        <td><p>Journal Club Tombola</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mean_comparison.html">mean_comparison()</a></code> </p>
-        </td>
-        <td><p>Mean comparison using data frames</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="means_lm.html">means_lm()</a></code> </p>
-        </td>
-        <td><p>Mean comparison</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="metamorphosis.html">metamorphosis()</a></code> </p>
-        </td>
-        <td><p>Transform data frame based in a dictionary</p></td>
+        <td><p>Heritability in plant breeding</p></td>
       </tr><tr>
         
         <td>
@@ -297,45 +374,21 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="plot_design.html">plot_design()</a></code> </p>
+          <p><code><a href="metamorphosis.html">metamorphosis()</a></code> </p>
         </td>
-        <td><p>Fieldbook plot experimental designs</p></td>
+        <td><p>Transform data frame based in a dictionary</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="plot_diag.html">plot_diag()</a></code> </p>
+          <p><code><a href="means_lm.html">means_lm()</a></code> </p>
         </td>
-        <td><p>Diagnostic plots</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_smr.html">plot_smr()</a></code> </p>
-        </td>
-        <td><p>Plot summary data</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rticles.html">rticles()</a></code> </p>
-        </td>
-        <td><p>Build markdown o bookdown template</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tarpuy.html">tarpuy()</a></code> </p>
-        </td>
-        <td><p>Fieldbook experimental designs</p></td>
+        <td><p>Mean comparison</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="web_table.html">web_table()</a></code> </p>
         </td>
         <td><p>HTML tables for markdown documents</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="yupana.html">yupana()</a></code> </p>
-        </td>
-        <td><p>Interactive data analysis</p></td>
       </tr>
     </tbody>
     </table>
@@ -362,6 +415,23 @@
    </div>
 
   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.js" integrity="sha256-GKvGqXDznoRYHCwKXGnuchvKSwmx9SRMrZOTh2g4Sb0=" crossorigin="anonymous"></script>
+<script>
+  docsearch({
+    
+    
+    apiKey: '',
+    indexName: '',
+    inputSelector: 'input#search-input.form-control',
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
+  });
+</script>
+
 
 
   </body>

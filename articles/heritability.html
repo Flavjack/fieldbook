@@ -17,7 +17,9 @@
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Broad-sense heritability in plant breeding">
+<script src="../pkgdown.js"></script><!-- docsearch --><script src="../docsearch.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous">
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script><meta property="og:title" content="Broad-sense heritability in plant breeding">
 <meta property="og:description" content="How to calculate the heritability in plant breeding">
 <meta property="og:image" content="https://flavjack.github.io/inti/reference/figures/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -58,24 +60,38 @@
   </a>
 </li>
 <li>
-  <a href="../articles/inti.html">
+  <a href="../articles/apps.html">
     <span class="fa fa-seedling"></span>
      
-    Get started
+    Apps
   </a>
 </li>
-<li>
-  <a href="../articles/heritability.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-book"></span>
      
     Articles
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/heritability.html">Broad-sense heritability in plant breeding</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../reference/index.html">
     <span class="fa fa-file-code"></span>
      
     Functions
+  </a>
+</li>
+<li>
+  <a href="../articles/policy.html">
+    <span class="fa fa-shield-alt"></span>
+     
+    Privacy Policy
   </a>
 </li>
 <li>
@@ -94,7 +110,13 @@
   </a>
 </li>
       </ul>
+<form class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
+        <div class="form-group">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
 </div>
+      </form>
+      
+    </div>
 <!--/.nav-collapse -->
   </div>
 <!--/.container -->
@@ -108,8 +130,7 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Broad-sense heritability in plant breeding</h1>
-                        <h4 class="author">Maria Belen Kistner</h4>
-                        <h4 class="author">Flavio Lozano-Isla</h4>
+                        <h4 class="author">Maria Belen Kistner &amp; Flavio Lozano-Isla</h4>
             
       
       <small class="dont-index">Source: <a href="https://github.com/flavjack/inti/blob/master/vignettes/heritability.Rmd"><code>vignettes/heritability.Rmd</code></a></small>
@@ -122,8 +143,8 @@
 <div id="broad-sense-heritability-h2" class="section level1">
 <h1 class="hasAnchor">
 <a href="#broad-sense-heritability-h2" class="anchor"></a>Broad-sense heritability (<span class="math inline">\(H^2\)</span>)</h1>
-<p>Broad-sense heritability (<span class="math inline">\(H^2\)</span>) is defined as the proportion of phenotypic variance that is attributable to an overall genetic variance for the genotype <span class="citation">(<span class="citeproc-not-found" data-reference-id="schmidt2019Estimating"><strong>???</strong></span>)</span>. There are usually additional interpretations associated with <span class="math inline">\(H^2\)</span>: <em>(i)</em> It is equivalent to the coefficient of determination of a linear regression of the unobservable genotypic value on the observed phenotype; <em>(ii)</em> It is also the squared correlation between predicted phenotypic value and genotypic value; and <em>(iii)</em> It represents the proportion of the selection differential (<span class="math inline">\(S\)</span>) that can be realized as the response to selection (<span class="math inline">\(R\)</span>) <span class="citation">(Falconer and Mackay, <a href="#ref-falconer2005Introduction" role="doc-biblioref">2005</a>)</span>.</p>
-<p>There are two main reasons why heritability on an entry-mean basis is of interest in plant breeding <span class="citation">(<span class="citeproc-not-found" data-reference-id="schmidt2019Heritability"><strong>???</strong></span>)</span>:</p>
+<p>Broad-sense heritability (<span class="math inline">\(H^2\)</span>) is defined as the proportion of phenotypic variance that is attributable to an overall genetic variance for the genotype <span class="citation">(Schmidt et al., <a href="#ref-schmidt2019Estimating" role="doc-biblioref">2019</a><a href="#ref-schmidt2019Estimating" role="doc-biblioref">b</a>)</span>. There are usually additional interpretations associated with <span class="math inline">\(H^2\)</span>: <em>(i)</em> It is equivalent to the coefficient of determination of a linear regression of the unobservable genotypic value on the observed phenotype; <em>(ii)</em> It is also the squared correlation between predicted phenotypic value and genotypic value; and <em>(iii)</em> It represents the proportion of the selection differential (<span class="math inline">\(S\)</span>) that can be realized as the response to selection (<span class="math inline">\(R\)</span>) <span class="citation">(Falconer and Mackay, <a href="#ref-falconer2005Introduction" role="doc-biblioref">2005</a>)</span>.</p>
+<p>There are two main reasons why heritability on an entry-mean basis is of interest in plant breeding <span class="citation">(Schmidt et al., <a href="#ref-schmidt2019Heritability" role="doc-biblioref">2019</a><a href="#ref-schmidt2019Heritability" role="doc-biblioref">a</a>)</span>:</p>
 <ol style="list-style-type: decimal">
 <li>It is plugged into the breeder’s Equation to predict the response to selection.</li>
 <li>It is a descriptive measure used to assess the usefulness and precision of results from cultivar evaluation trials.</li>
@@ -143,12 +164,12 @@
 <div id="usual-problems" class="section level1">
 <h1 class="hasAnchor">
 <a href="#usual-problems" class="anchor"></a>Usual Problems</h1>
-<p>In practice, most trials are conducted in a multienvironment trial (MET) presente unbalanced data as not all cultivars are tested at each environment or simply when plot data is lost or when the number of replicates at each location varies between genotypes <span class="citation">(<span class="citeproc-not-found" data-reference-id="schmidt2019Estimating"><strong>???</strong></span>)</span>. However, the standard method for estimating heritability implicitly assumes balanced data, independent genotype effects, and homogeneous variances.</p>
+<p>In practice, most trials are conducted in a multienvironment trial (MET) presente unbalanced data as not all cultivars are tested at each environment or simply when plot data is lost or when the number of replicates at each location varies between genotypes <span class="citation">(Schmidt et al., <a href="#ref-schmidt2019Estimating" role="doc-biblioref">2019</a><a href="#ref-schmidt2019Estimating" role="doc-biblioref">b</a>)</span>. However, the standard method for estimating heritability implicitly assumes balanced data, independent genotype effects, and homogeneous variances.</p>
 </div>
 <div id="how-calculate-the-heritability" class="section level1">
 <h1 class="hasAnchor">
 <a href="#how-calculate-the-heritability" class="anchor"></a>How calculate the Heritability?</h1>
-<p>According <span class="citation">(<span class="citeproc-not-found" data-reference-id="schmidt2019Heritability"><strong>???</strong></span>)</span>, the variance components could be calculated in two ways:</p>
+<p>According <span class="citation">Schmidt et al. (<a href="#ref-schmidt2019Heritability" role="doc-biblioref">2019</a><a href="#ref-schmidt2019Heritability" role="doc-biblioref">a</a>)</span>, the variance components could be calculated in two ways:</p>
 <div id="two-stages-approach" class="section level2">
 <h2 class="hasAnchor">
 <a href="#two-stages-approach" class="anchor"></a>1) Two stages approach</h2>
@@ -201,8 +222,8 @@
 <div id="heritability-function-in-the-package" class="section level1">
 <h1 class="hasAnchor">
 <a href="#heritability-function-in-the-package" class="anchor"></a>Heritability function in the package</h1>
-<p>For calculate the standard heritability in MET experiments the number of location and replication should be include manually in the function <code><a href="../reference/H2cal.html">H2cal()</a></code>. In the case of difference number of replication in each experiments, take the maximum value (often done in practice) <span class="citation">(<span class="citeproc-not-found" data-reference-id="schmidt2019Estimating"><strong>???</strong></span>)</span>.</p>
-<p>For remove the outliers the function implemented is the Method 4 used for <span class="citation">(<span class="citeproc-not-found" data-reference-id="bernal-vasquez2016Outliera"><strong>???</strong></span>)</span>: Bonferroni-Holm using re-scaled MAD for standardizing residuals (BH-MADR).</p>
+<p>For calculate the standard heritability in MET experiments the number of location and replication should be include manually in the function <code><a href="../reference/H2cal.html">H2cal()</a></code>. In the case of difference number of replication in each experiments, take the maximum value (often done in practice) <span class="citation">(Schmidt et al., <a href="#ref-schmidt2019Estimating" role="doc-biblioref">2019</a><a href="#ref-schmidt2019Estimating" role="doc-biblioref">b</a>)</span>.</p>
+<p>For remove the outliers the function implemented is the Method 4 used for <span class="citation">Bernal-Vasquez et al. (<a href="#ref-bernal-vasquez2016Outliera" role="doc-biblioref">2016</a>)</span>: Bonferroni-Holm using re-scaled MAD for standardizing residuals (BH-MADR).</p>
 <div id="load-packages" class="section level2">
 <h2 class="hasAnchor">
 <a href="#load-packages" class="anchor"></a>Load packages</h2>
@@ -652,8 +673,17 @@
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
 <div id="refs">
+<div id="ref-bernal-vasquez2016Outliera">
+<p>Bernal-Vasquez, A.-M., H.-F. Utz, and H.-P. Piepho. 2016. Outlier detection methods for generalized lattices: A case study on the transition from ANOVA to REML. Theoretical and Applied Genetics 129(4): 787–804. doi: <a href="https://doi.org/10.1007/s00122-016-2666-6">10.1007/s00122-016-2666-6</a>.</p>
+</div>
 <div id="ref-falconer2005Introduction">
 <p>Falconer, D.S., and T.F. Mackay. 2005. Introduction to quantitative genetics (Pearson Prentice Hall, editor). Fourth.</p>
+</div>
+<div id="ref-schmidt2019Heritability">
+<p>Schmidt, P., J. Hartung, J. Bennewitz, and H.-P. Piepho. 2019a. Heritability in Plant Breeding on a Genotype-Difference Basis. Genetics 212(4): 991–1008. doi: <a href="https://doi.org/10.1534/genetics.119.302134">10.1534/genetics.119.302134</a>.</p>
+</div>
+<div id="ref-schmidt2019Estimating">
+<p>Schmidt, P., J. Hartung, J. Rath, and H.-P. Piepho. 2019b. Estimating Broad-Sense Heritability with Unbalanced Data from Agricultural Cultivar Trials. Crop Science 59(2): 525–536. doi: <a href="https://doi.org/10.2135/cropsci2018.06.0376">10.2135/cropsci2018.06.0376</a>.</p>
 </div>
 <div id="ref-zystro2018Alternative">
 <p>Zystro, J., M. Colley, and J. Dawson. 2018. Alternative Experimental Designs for Plant Breeding. Plant Breeding Reviews. John Wiley &amp; Sons, Ltd. pp. 87–117</p>
@@ -684,7 +714,20 @@
 </div>
 
   
-
-
-  </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.js" integrity="sha256-GKvGqXDznoRYHCwKXGnuchvKSwmx9SRMrZOTh2g4Sb0=" crossorigin="anonymous"></script><script>
+  docsearch({
+    
+    
+    apiKey: '',
+    indexName: '',
+    inputSelector: 'input#search-input.form-control',
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
+  });
+</script>
+</body>
 </html>
