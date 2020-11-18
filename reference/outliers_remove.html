@@ -97,7 +97,7 @@ residuals standardized by the re scaled MAD (BH MADR)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">inti</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -238,6 +238,89 @@ Theoretical and Applied Genetics, vol. 129, no. 4, Apr. 2016.</p>
   , model <span class='op'>=</span> <span class='st'>"rep + (1|rep:block) + gen"</span>
   <span class='op'>)</span>
   
+<span class='va'>outliers</span>
+</div><div class='output co'>#&gt; $data
+#&gt;    rep block gen  yield
+#&gt; 1   R1    B1 G11 4.1172
+#&gt; 2   R1    B1 G04 4.4461
+#&gt; 4   R1    B1 G22 4.5784
+#&gt; 5   R1    B2 G21 4.6540
+#&gt; 6   R1    B2 G10 4.1736
+#&gt; 7   R1    B2 G20 4.0141
+#&gt; 8   R1    B2 G02 4.3350
+#&gt; 9   R1    B3 G23 4.2323
+#&gt; 10  R1    B3 G14 4.7572
+#&gt; 11  R1    B3 G16 4.4906
+#&gt; 12  R1    B3 G18 3.9737
+#&gt; 13  R1    B4 G13 4.2530
+#&gt; 14  R1    B4 G03 3.3420
+#&gt; 15  R1    B4 G19 4.7269
+#&gt; 17  R1    B5 G17 4.7876
+#&gt; 18  R1    B5 G15 5.0902
+#&gt; 19  R1    B5 G07 4.1505
+#&gt; 20  R1    B5 G01 5.1202
+#&gt; 21  R1    B6 G06 4.7085
+#&gt; 22  R1    B6 G12 5.2560
+#&gt; 24  R1    B6 G09 3.3986
+#&gt; 25  R2    B1 G08 3.9926
+#&gt; 26  R2    B1 G20 3.6056
+#&gt; 27  R2    B1 G14 4.5294
+#&gt; 28  R2    B1 G04 4.3599
+#&gt; 29  R2    B2 G24 3.9039
+#&gt; 30  R2    B2 G15 4.9114
+#&gt; 31  R2    B2 G03 3.7999
+#&gt; 32  R2    B2 G23 4.3042
+#&gt; 33  R2    B3 G12 5.3127
+#&gt; 34  R2    B3 G11 5.1163
+#&gt; 35  R2    B3 G21 5.3802
+#&gt; 36  R2    B3 G17 5.0744
+#&gt; 37  R2    B4 G05 5.1202
+#&gt; 38  R2    B4 G09 4.2955
+#&gt; 39  R2    B4 G10 4.9057
+#&gt; 40  R2    B4 G01 5.7161
+#&gt; 41  R2    B5 G02 5.1566
+#&gt; 42  R2    B5 G18 5.0988
+#&gt; 43  R2    B5 G13 5.4840
+#&gt; 44  R2    B5 G22 5.0969
+#&gt; 45  R2    B6 G19 5.3148
+#&gt; 46  R2    B6 G07 4.6297
+#&gt; 47  R2    B6 G06 5.1751
+#&gt; 48  R2    B6 G16 5.3024
+#&gt; 49  R3    B1 G11 3.9205
+#&gt; 50  R3    B1 G01 4.6512
+#&gt; 51  R3    B1 G14 4.3887
+#&gt; 52  R3    B1 G19 4.5552
+#&gt; 53  R3    B2 G02 4.0510
+#&gt; 54  R3    B2 G15 4.6783
+#&gt; 55  R3    B2 G09 3.1407
+#&gt; 56  R3    B2 G08 3.9821
+#&gt; 57  R3    B3 G17 4.3234
+#&gt; 58  R3    B3 G18 4.2486
+#&gt; 59  R3    B3 G04 4.3960
+#&gt; 60  R3    B3 G06 4.2474
+#&gt; 61  R3    B4 G12 4.1746
+#&gt; 62  R3    B4 G13 4.7512
+#&gt; 63  R3    B4 G10 4.0875
+#&gt; 64  R3    B4 G23 3.8721
+#&gt; 65  R3    B5 G21 4.4130
+#&gt; 66  R3    B5 G22 4.2397
+#&gt; 67  R3    B5 G16 4.3852
+#&gt; 68  R3    B5 G24 3.5655
+#&gt; 69  R3    B6 G03 2.8873
+#&gt; 70  R3    B6 G05 4.1972
+#&gt; 71  R3    B6 G20 3.7349
+#&gt; 72  R3    B6 G07 3.6096
+#&gt; 
+#&gt; $outliers
+#&gt;    rep block gen  yield      resi  res_MAD  rawp.BHStud index         adjp
+#&gt; 3   R1    B1 G05 5.8757 0.7022176 4.929351 8.250342e-07     3 8.250342e-07
+#&gt; 16  R1    B4 G08 4.9989 0.5179535 3.635874 2.770401e-04    16 2.770401e-04
+#&gt; 23  R1    B6 G24 4.9577 0.5385472 3.780435 1.565546e-04    23 1.565546e-04
+#&gt;           bholm out_flag
+#&gt; 3  5.940247e-05  OUTLIER
+#&gt; 16 1.939281e-02  OUTLIER
+#&gt; 23 1.111538e-02  OUTLIER
+#&gt; </div><div class='input'>  
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

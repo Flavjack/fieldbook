@@ -96,7 +96,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">inti</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -333,41 +333,42 @@ Theoretical and Applied Genetics, vol. 129, no. 4, Apr. 2016.</p>
             , ran.model <span class='op'>=</span> <span class='st'>"1 + rep + (1|rep:block) + (1|gen)"</span>
             , plot_diag <span class='op'>=</span> <span class='cn'>TRUE</span>
             , emmeans <span class='op'>=</span> <span class='cn'>TRUE</span>
+            , outliers.rm <span class='op'>=</span> <span class='cn'>TRUE</span>
             <span class='op'>)</span>
 </div><div class='img'><img src='H2cal-1.png' alt='' width='700' height='433' /></div><div class='input'>            
  <span class='va'>hr</span><span class='op'>$</span><span class='va'>tabsmr</span>
 </div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 1 x 16</span><span>
 #&gt;   variable   rep  geno   env  year  mean   std   min   max   V.g V.gxl V.gxy
 #&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span> yield        3    24     1     1  4.48 0.415  3.50  5.11 0.143     0     0
+#&gt; </span><span style='color: #555555;'>1</span><span> yield        3    24     1     1  4.43 0.420  3.44  5.04 0.146     0     0
 #&gt; </span><span style='color: #555555;'># … with 4 more variables: V.e </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, h2.s </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, h2.c </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, h2.p </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div><div class='input'> <span class='va'>hr</span><span class='op'>$</span><span class='va'>blues</span>
 </div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 24 x 6</span><span>
 #&gt;    gen   yield    SE    df lower.CL upper.CL
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;fct&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> G01    5.11 0.199  44.3     4.71     5.51
-#&gt; </span><span style='color: #555555;'> 2</span><span> G02    4.48 0.199  44.3     4.08     4.88
-#&gt; </span><span style='color: #555555;'> 3</span><span> G03    3.50 0.199  44.3     3.10     3.90
-#&gt; </span><span style='color: #555555;'> 4</span><span> G04    4.49 0.199  44.3     4.09     4.89
-#&gt; </span><span style='color: #555555;'> 5</span><span> G05    5.04 0.199  44.3     4.64     5.44
-#&gt; </span><span style='color: #555555;'> 6</span><span> G06    4.54 0.199  44.3     4.14     4.94
-#&gt; </span><span style='color: #555555;'> 7</span><span> G07    4.11 0.199  44.3     3.71     4.51
-#&gt; </span><span style='color: #555555;'> 8</span><span> G08    4.53 0.199  44.3     4.13     4.93
-#&gt; </span><span style='color: #555555;'> 9</span><span> G09    3.50 0.199  44.3     3.10     3.90
-#&gt; </span><span style='color: #555555;'>10</span><span> G10    4.37 0.199  44.3     3.97     4.77
+#&gt; </span><span style='color: #555555;'> 1</span><span> G01    5.04 0.129  42.6     4.78     5.30
+#&gt; </span><span style='color: #555555;'> 2</span><span> G02    4.43 0.129  42.6     4.17     4.69
+#&gt; </span><span style='color: #555555;'> 3</span><span> G03    3.53 0.131  42.7     3.27     3.80
+#&gt; </span><span style='color: #555555;'> 4</span><span> G04    4.59 0.131  42.7     4.33     4.86
+#&gt; </span><span style='color: #555555;'> 5</span><span> G05    4.55 0.154  40.6     4.23     4.86
+#&gt; </span><span style='color: #555555;'> 6</span><span> G06    4.55 0.130  42.6     4.29     4.81
+#&gt; </span><span style='color: #555555;'> 7</span><span> G07    4.05 0.129  42.6     3.79     4.31
+#&gt; </span><span style='color: #555555;'> 8</span><span> G08    4.25 0.153  40.5     3.94     4.56
+#&gt; </span><span style='color: #555555;'> 9</span><span> G09    3.44 0.131  42.7     3.17     3.70
+#&gt; </span><span style='color: #555555;'>10</span><span> G10    4.30 0.129  42.6     4.04     4.56
 #&gt; </span><span style='color: #555555;'># … with 14 more rows</span><span></div><div class='input'> <span class='va'>hr</span><span class='op'>$</span><span class='va'>blups</span>
 </div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 24 x 2</span><span>
 #&gt;    gen   yield
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> G01    5.02
-#&gt; </span><span style='color: #555555;'> 2</span><span> G02    4.52
-#&gt; </span><span style='color: #555555;'> 3</span><span> G03    3.73
-#&gt; </span><span style='color: #555555;'> 4</span><span> G04    4.52
-#&gt; </span><span style='color: #555555;'> 5</span><span> G05    4.99
-#&gt; </span><span style='color: #555555;'> 6</span><span> G06    4.56
-#&gt; </span><span style='color: #555555;'> 7</span><span> G07    4.21
-#&gt; </span><span style='color: #555555;'> 8</span><span> G08    4.58
-#&gt; </span><span style='color: #555555;'> 9</span><span> G09    3.71
-#&gt; </span><span style='color: #555555;'>10</span><span> G10    4.43
+#&gt; </span><span style='color: #555555;'> 1</span><span> G01    4.97
+#&gt; </span><span style='color: #555555;'> 2</span><span> G02    4.47
+#&gt; </span><span style='color: #555555;'> 3</span><span> G03    3.62
+#&gt; </span><span style='color: #555555;'> 4</span><span> G04    4.58
+#&gt; </span><span style='color: #555555;'> 5</span><span> G05    4.57
+#&gt; </span><span style='color: #555555;'> 6</span><span> G06    4.50
+#&gt; </span><span style='color: #555555;'> 7</span><span> G07    4.10
+#&gt; </span><span style='color: #555555;'> 8</span><span> G08    4.57
+#&gt; </span><span style='color: #555555;'> 9</span><span> G09    3.56
+#&gt; </span><span style='color: #555555;'>10</span><span> G10    4.33
 #&gt; </span><span style='color: #555555;'># … with 14 more rows</span><span></div><div class='input'> 
 </div></span></pre>
   </div>
